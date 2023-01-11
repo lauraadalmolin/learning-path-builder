@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 16px 0px;
+  flex: 1;
 }
 
 .label {
@@ -13,9 +14,41 @@
 .input {
   border: none;
   border-radius: 4px;
-  font-size: 1.4rem;
-  margin-top: 4px;
+  font-size: 1.2rem;
+  margin-top: 6px;
   outline: none;
   color: var(--gray-500);
-  padding: 8px 0 8px 16px;
+  padding: 12px 0 12px 16px;
+}
+
+.input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: var(--gray-200);
+}
+
+.input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: var(--gray-200);
+  opacity: 1;
+}
+
+.input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: var(--gray-200);
+  opacity: 1;
+}
+
+.input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--gray-200);
+}
+
+.input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--gray-200);
+}
+
+.input::placeholder {
+  /* Most modern browsers support this now. */
+  color: var(--gray-200);
 }

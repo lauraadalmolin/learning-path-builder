@@ -1,11 +1,10 @@
 import styles from './style.module.css';
-import * as MaterialIcons from 'react-icons/md';
 
-const Input = ({ label }) => {
+const Input = ({ label, placeholder='Arrays e Strings' }) => {
   return (
     <div className={styles.container}>
       <span className={styles.label}>{ label }</span>
-      <input className={styles.input}></input>
+      <input className={styles.input} placeholder={placeholder}></input>
     </div>
   );
 };
