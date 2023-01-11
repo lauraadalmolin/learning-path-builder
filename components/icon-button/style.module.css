@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  color: white;
+  box-shadow: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.icon {
+  font-size: 1.6rem;
+}
+
+.primary {
+  background-color: var(--purple-600);
+}
+
+.primary:hover {
+  background-color: var(--purple-800);
+}
+
+.secondary {
+  background-color: var(--gray-400);
+}
+
+.secondary:hover {
+  background-color: var(--gray-500);
+}
+
+.helper {
+  background-color: var(--gray-600);
+}
+
+.helper:hover {
+  background-color: var(--gray-700);
+}
+
+.delete {
+  background-color: var(--red-600);
+}
+
+.delete:hover {
+  background-color: var(--red-800);
+}

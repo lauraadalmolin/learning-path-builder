@@ -1,0 +1,19 @@
+.columnContainer {
+  background-color: var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.rowContainer {
+  display: flex;
+}
+
+.section {
+  padding: 2rem;
+}
+
+.spacer {
+  height: 1px;
+  background-color: white;
+}
