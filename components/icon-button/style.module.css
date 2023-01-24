@@ -19,11 +19,11 @@
 }
 
 .primary {
-  background-color: var(--purple-600);
+  background-color: var(--blue-600);
 }
 
 .primary:hover {
-  background-color: var(--purple-800);
+  background-color: var(--blue-800);
 }
 
 .secondary {

@@ -9,16 +9,16 @@ import useOutsideClick from '../../hooks/use-outside-click';
 import strings from '../../constants/strings.json';
 import styles from './style.module.css';
 
-const Navbar = () => {
+const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, saveNameHandler }) => {
   const [inputVisible, setInputVisible] = useState(false);
-  const [headerText, setHeaderText] = useState();
-  const [enableTools, setEnableTools] = useState(false);
+  const [headerText, setHeaderText] = useState(strings.navbarHomeHeaderText);
 
   const router = useRouter();
 
   const navigateHandler = () => { router.push('/home') }
-  const handleClick = () => { enableTools && setInputVisible(true) }
-  const handleClickOutside = () => { enableTools & setInputVisible(false) }
+  const handleClick = () => { showOptions && setInputVisible(true) }
+  const handleClickOutside = () => { showOptions && setInputVisible(false) }
+
   const ref = useOutsideClick(handleClickOutside);
 
   const inputChangedHandler = (event) => {
@@ -33,24 +33,22 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (!router.pathname) return;
-    
-    switch (router.pathname) {
-      case '/home': {
-        setHeaderText(strings.navbarHomeHeaderText);
-        setEnableTools(false);
-        break;
-      }
-      case '/builder': {
-        // try loading file with id on params
-        setHeaderText(strings.navbarBuilderSampleHeaderText);
-        setEnableTools(true);
-        break;
-      }
+    if (learningPathData) {
+      const text = !learningPathData.name ? strings.navbarBuilderSampleHeaderText : learningPathData.name;
+      setHeaderText(text);
     }
-   
-    console.log('here', router.pathname);
-  }, [router.pathname]);
+    
+  }, [learningPathData]);
+
+  useEffect(() => {
+    if (!showOptions) return;
+
+    if (!inputVisible && !headerText) setInputVisible(true);
+    if (inputVisible || !headerText) return;
+
+    saveNameHandler(headerText);
+
+  }, [inputVisible])
 
   return (
     <nav>
@@ -70,7 +68,7 @@ const Navbar = () => {
             }
           </li>
         </div>
-        { enableTools && <div className={styles.rightContainer}>
+        { showOptions && <div className={styles.rightContainer}>
           <li>
             <Button type='primary' icon='MdCheck'>
               Validar
@@ -82,7 +80,7 @@ const Navbar = () => {
             </Button>
           </li>
           <li>
-            <Button type='primary' icon='MdSave'>
+            <Button onClickHandler={savePathHandler} type='primary' icon='MdSave'>
               Salvar
             </Button>
           </li>

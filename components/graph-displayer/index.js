@@ -78,7 +78,6 @@ const GraphDisplayer = () => {
           selector: '.transition',
           css: {
             'background-color': 'black',
-            'border-radius': '2px',
             'width': '60px',
             'height': '120px',
             'label': 'data(title)',

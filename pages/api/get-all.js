@@ -1,9 +1,7 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-import { getFileNames, readFile } from '../../utils/file-system';
+import { getAllFileNames, readFile } from '../../utils/file-system';
 
 export default function handler(req, res) {
-  const fileNames = getFileNames();
+  const fileNames = getAllFileNames();
   const routes = [];
 
   fileNames.forEach((fileName) => {

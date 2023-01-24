@@ -2,8 +2,8 @@ import Badge from '../badge';
 import IconButton from '../icon-button';
 import styles from './style.module.css';
 
-const TableRow = ({ learningPathName, contentBadge, focusBadge, navigate }) => {
-  return <div className={styles.tableRow} onClick={navigate}>
+const TableRow = ({ learningPathName, contentBadge, focusBadge, navigate, id }) => {
+  return <div kry={id} className={styles.tableRow} onClick={navigate}>
       <div className={styles.infoContainer}>
         <span className={styles.pathName}>{ learningPathName }</span>
         <Badge>{ contentBadge }</Badge>
