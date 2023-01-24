@@ -9,6 +9,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
+  --offwhite: rgb(240, 240, 240);
+
   --purple-800: #5342b4;
   --purple-600: #6E5CDB;
 
@@ -18,9 +20,13 @@
   --gray-400: #868686;
   --gray-200: #adadad;
   --gray-100: #D3D3D3;
+  --gray-50: #F0F0F0;
 
   --red-800: #a12626;
   --red-600: #C63D3D;
+
+  --blue-400: #6C90EC;
+  --blue-100: #CEDCFF;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -52,3 +58,18 @@ a {
     color-scheme: dark;
   }
 } */
+
+
+.no-select {
+  user-select: none;
+  /* supported by Chrome and Opera */
+  -webkit-user-select: none;
+  /* Safari */
+  /* background-color: purple; */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+}

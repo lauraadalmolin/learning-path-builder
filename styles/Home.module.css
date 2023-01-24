@@ -1,6 +1,5 @@
 .externalContainer {
   display: flex;
-  /* align-items: flex-start; */
   flex: 1;
   height: 100vh;
 }

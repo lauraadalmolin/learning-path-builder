@@ -17,3 +17,7 @@
   height: 1px;
   background-color: white;
 }
+
+.headerSpacer {
+  margin-top: 0.6rem;
+}

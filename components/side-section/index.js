@@ -1,4 +1,5 @@
 import Button from '../button';
+import ElementForm from '../element-form';
 import SectionHeader from '../section-header';
 import styles from './style.module.css';
 
@@ -7,7 +8,7 @@ const SideSection = () => {
     <div className={styles.columnContainer}>
       <div className={styles.section}>
         <SectionHeader>Ferramentas</SectionHeader>
-        <div className={styles.rowContainer}>
+        <div className={`${styles.rowContainer} ${styles.headerSpacer}`}>
           <Button icon='MdAdd' type='primary'>
             Conteúdo
           </Button>
@@ -18,7 +19,7 @@ const SideSection = () => {
       </div>
       <div className={styles.spacer}></div>
       <div className={styles.section}>
-        <SectionHeader>Criar Elemento</SectionHeader>
+        <ElementForm/>  
       </div>
     </div>
   );

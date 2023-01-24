@@ -1,0 +1,28 @@
+.tableRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--gray-50);
+  margin-right: 6px;
+  margin-top: 6px;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  color: var(--gray-700);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tableRow:hover {
+  background-color: var(--gray-100);
+}
+
+.infoContainer {
+  display: flex;
+  gap: 6px;
+}
+
+.pathName {
+  padding-right: 24px;
+}

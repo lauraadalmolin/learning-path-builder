@@ -1,0 +1,14 @@
+.externalContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 3.4rem);
+  padding: 2rem 3.3rem;
+}
+
+.rowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 16px;
+}

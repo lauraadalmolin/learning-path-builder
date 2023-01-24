@@ -1,0 +1,8 @@
+.externalContainer {
+  background-color: white;
+}
+
+.rowContainer {
+  display: flex;
+  height: calc(100vh - 3.4rem);
+}
