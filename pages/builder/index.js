@@ -47,7 +47,7 @@ const Builder = () => {
       setLPathData(res.data);
       setLoading(false);
     } else {
-      router.push('/home');
+      router.push('/main');
       // add toast saying it doesn't exist
     }
   };

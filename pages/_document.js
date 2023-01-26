@@ -2,12 +2,14 @@ import { Html, Main, Head, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html lang="en">
-      <Head />
+    <Html lang='en'>
+      <Head>
+        <title>LPath Builder</title>
+      </Head>
       <body>
         <Main />
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

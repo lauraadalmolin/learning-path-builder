@@ -15,7 +15,7 @@ const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, sav
 
   const router = useRouter();
 
-  const navigateHandler = () => { router.push('/home') }
+  const navigateHandler = () => { router.push('/main') }
   const handleClick = () => { showOptions && setInputVisible(true) }
   const handleClickOutside = () => { showOptions && setInputVisible(false) }
 

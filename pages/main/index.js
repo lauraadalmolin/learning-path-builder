@@ -15,7 +15,7 @@ import strings from '../../constants/strings.json';
 import styles from './style.module.css';
 import { assembleQuestion } from '../../utils/strings';
 
-const Home = () => {
+const Main = () => {
   const router = useRouter();
   const [lPaths, setLPaths] = useState([]);
   const [targetLPath, setTargetLPath] = useState(null);
@@ -107,4 +107,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Main;
