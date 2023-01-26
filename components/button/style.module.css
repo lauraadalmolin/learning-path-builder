@@ -9,11 +9,11 @@
   font-size: 0.9rem;
   box-shadow: none;
   border-radius: 16px;
-  padding: 0.25rem 0.85rem;
+  padding: 0.2rem 0.85rem;
   border: none;
   cursor: pointer;
   margin-right: 6px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .icon {

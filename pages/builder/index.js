@@ -9,13 +9,9 @@ import learningPathService from '../../service/learning-path.service';
 import styles from './style.module.css';
 
 const Builder = () => {
+  const [loading, setLoading] = useState(true);
   const [lPathData, setLPathData] = useState();
   const router = useRouter();
-
-  const loadLearningPathData = async (learningPathId) => {
-    const res = await learningPathService.getById(learningPathId);  
-    setLPathData(res);
-  }
 
   const updateLPathData = (key, value) => {
     setLPathData((currentData) => {
@@ -30,7 +26,7 @@ const Builder = () => {
     updateLPathData('name', name);
   }
 
-  const savePath = async (event) => {
+  const savePath = async () => {
     const res = await learningPathService.save(lPathData);
     
     if (res.success) {
@@ -41,8 +37,20 @@ const Builder = () => {
   }
 
   useEffect(() => {
+    if (!lPathData || !lPathData.id) return;
     savePath();
   }, [lPathData]);
+
+  const loadLearningPathData = async (learningPathId) => {
+    const res = await learningPathService.getById(learningPathId);
+    if (res.success) {
+      setLPathData(res.data);
+      setLoading(false);
+    } else {
+      router.push('/home');
+      // add toast saying it doesn't exist
+    }
+  };
 
   useEffect(() => {
     if (!router.query.learningPathId) return;
@@ -52,13 +60,19 @@ const Builder = () => {
 
   }, [router.query]);
 
-  return <div className={styles.externalContainer}>
-    <Navbar learningPathData={lPathData} showOptions={true} saveNameHandler={saveName} savePathHandler={savePath}/>
-    <div className={styles.rowContainer}>
-      <GraphDisplayer/>
-      <SideSection/>
-    </div>
-  </div>;
+  if (loading) {
+    return <div>Loading...</div>;
+  } else {
+    return <div className={styles.externalContainer}>
+      <Navbar learningPathData={lPathData} showOptions={true} saveNameHandler={saveName} savePathHandler={savePath}/>
+      <div className={styles.rowContainer}>
+        <GraphDisplayer/>
+        <SideSection/>
+      </div>
+    </div>;
+  }
+
 }
+
 
 export default Builder;

@@ -1,4 +1,6 @@
 {
   "navbarHomeHeaderText": "Modelador de Rotas de Aprendizagem",
-  "navbarBuilderSampleHeaderText": "Nova Rota de Aprendizagem (clique para editar o nome)"
+  "navbarBuilderSampleHeaderText": "Nova Rota de Aprendizagem (clique para editar o nome)",
+  "confirmExclusionModalTitle": "Confirmar exclusão",
+  "confirmExclusionModalDescription": "Você tem certeza que deseja excluir a rota"
 }

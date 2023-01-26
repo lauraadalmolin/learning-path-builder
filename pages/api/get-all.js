@@ -5,9 +5,11 @@ export default function handler(req, res) {
   const routes = [];
 
   fileNames.forEach((fileName) => {
-    const fileData = readFile(fileName);
-    const fileAsJSON = JSON.parse(fileData.toString());
-    routes.push(fileAsJSON);
+    const response = readFile(fileName);
+    if (response.success) {
+      const fileAsJSON = JSON.parse(response.data.toString());
+      routes.push(fileAsJSON);
+    }
   });
 
   res.status(200).json({ routes })

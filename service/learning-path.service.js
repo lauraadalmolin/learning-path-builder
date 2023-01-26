@@ -21,5 +21,9 @@ export default {
   getSummaries: async () => {
     const response = await fetch(`/api/get-summaries`);
     return await response.json();
+  },
+  delete: async (learningPathId) => {
+    const response = await fetch(`/api/delete?learningPathId=${learningPathId}`);
+    return await response.json();
   }
 }

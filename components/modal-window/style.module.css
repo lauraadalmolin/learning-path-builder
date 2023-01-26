@@ -1,0 +1,54 @@
+.container {
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.281);
+}
+
+.modal {
+  background-color: white;
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+  position: relative;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  color: var(--gray-500);
+  margin-bottom: 0.5rem;
+  min-height: 60px;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  font-size: 1.2rem;
+  color: var(--gray-400);
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  color: var(--blue-600)
+}

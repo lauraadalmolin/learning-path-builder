@@ -18,6 +18,7 @@
 
 .li:first-of-type {
   margin-right: 1rem;
+  display: flex;
 }
 
 .li {

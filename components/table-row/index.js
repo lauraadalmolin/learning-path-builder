@@ -1,19 +1,43 @@
 import Badge from '../badge';
 import IconButton from '../icon-button';
+
 import styles from './style.module.css';
 
-const TableRow = ({ learningPathName, contentBadge, focusBadge, navigate, id }) => {
-  return <div kry={id} className={styles.tableRow} onClick={navigate}>
+const TableRow = ({
+  lPath,
+  contentBadge,
+  focusBadge,
+  navigateHandler,
+  deleteHandler,
+  downloadHandler
+}) => {
+
+  const clickHandler = (event, fn) => {
+    event.stopPropagation();
+    fn(lPath);
+  };
+
+  return (
+    <div kry={lPath.id} className={styles.tableRow} onClick={navigateHandler}>
       <div className={styles.infoContainer}>
-        <span className={styles.pathName}>{ learningPathName }</span>
-        <Badge>{ contentBadge }</Badge>
-        <Badge>{ focusBadge }</Badge>
+        <span className={styles.pathName}>{lPath.name}</span>
+        <Badge>{contentBadge}</Badge>
+        <Badge>{focusBadge}</Badge>
       </div>
       <div>
-        <IconButton type='delete' icon='MdDelete'></IconButton>
-        <IconButton type='primary' icon='MdDownload'></IconButton>
+        <IconButton
+          onClickHandler={(e) => { clickHandler(e, deleteHandler) }}
+          type='delete'
+          icon='MdDelete'
+        ></IconButton>
+        <IconButton
+          onClickHandler={(e) => { clickHandler(e, downloadHandler) }}
+          type='primary'
+          icon='MdDownload'
+        ></IconButton>
       </div>
-    </div>;
-}
+    </div>
+  );
+};
 
 export default TableRow;

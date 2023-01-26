@@ -12,14 +12,26 @@ const getAllFileNames = () => {
 };
 
 const readFile = (fileName) => {
-  return fs.readFileSync(path.join(environment.storageDir, fileName));
+  const filePath = getFilePath(fileName);
+  
+  if (!fs.existsSync(filePath)) {
+    return { success: false, error: { message: 'File does not exist' } };
+  }
+
+  try {
+    const data = fs.readFileSync(filePath);
+    return { success: true, data };
+  } catch (e) {
+    return { success: false, error: e };
+  }
 }
 
 const createFile = (fileAsJSON) => {
   try {
     const fileId = fileAsJSON.id;
     const fileAsString = JSON.stringify(fileAsJSON, null, 2);
-    const filePath = getFilePath(fileId);
+    const fileName = getFileName(fileId)
+    const filePath = getFilePath(fileName);
 
     fs.writeFileSync(filePath, fileAsString);
     
@@ -29,12 +41,24 @@ const createFile = (fileAsJSON) => {
   }
 }
 
-const getFilePath = (fileId) => {
-  return path.join(environment.storageDir, getFileName(fileId));
+const getFilePath = (fileName) => {
+  return path.join(environment.storageDir, fileName);
 }
 
 const getFileName = (fileId) => {
   return `${fileId}.json`;
 };
 
-export { getAllFileNames, getFileName, getFilePath, readFile, createFile };
+const deleteFile = (fileId) => {
+  const fileName = getFileName(fileId);
+  const filePath = getFilePath(fileName);
+
+  try {
+    fs.unlinkSync(filePath);
+    return { success: true };
+  } catch(e) {
+    return { success: false, error: e }
+  }
+}
+
+export { createFile, deleteFile, getAllFileNames, getFileName, getFilePath, readFile };

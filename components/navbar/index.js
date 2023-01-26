@@ -1,4 +1,4 @@
-import { MdMenu } from 'react-icons/md';
+import { MdDashboard } from 'react-icons/md';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -55,7 +55,7 @@ const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, sav
       <ul className={`${styles.navbar} ${styles.ul}`}>
         <div className={styles.leftContainer}>
           <li onClick={navigateHandler} className={`${styles.li} no-select`}>
-            <MdMenu className={styles.icon} />
+            <MdDashboard className={styles.icon} />
           </li>
           <li ref={ref} onClick={handleClick} className={`${styles.li} ${styles.headerText} no-select`}>
             {!inputVisible && <span>{headerText}</span>}
