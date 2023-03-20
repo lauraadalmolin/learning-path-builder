@@ -16,10 +16,10 @@ const ModalWindow = ({ title, description, confirmHandler, cancelHandler }) => {
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.description}>{description}</p>
         <div className={styles.btnContainer}>
-          <Button onClickHandler={cancelHandler} type='secondary'>
+          <Button size='big' onClickHandler={cancelHandler} type='secondary'>
             Cancelar
           </Button>
-          <Button onClickHandler={confirmHandler} type='primary'>
+          <Button size='big' onClickHandler={confirmHandler} type='primary'>
             Confirmar
           </Button>
         </div>
