@@ -129,6 +129,8 @@ const GraphDisplayer = () => {
     setCy(nodes);
   }, []);
 
+  
+
   return <div ref={container} className={styles.container}></div>
       
 };
