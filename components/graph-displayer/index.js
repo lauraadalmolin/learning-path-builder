@@ -3,57 +3,15 @@ import { useEffect, useState, useRef } from 'react';
 
 import styles from './style.module.css';
 
-const GraphDisplayer = () => {
+const GraphDisplayer = ({ elements }) => {
   const container = useRef();
   const [cy, setCy] = useState();
   const [selectedElement, setSelectedElement] = useState();
 
   useEffect(() => {
     const cy = cytoscape({
-      container: container.current, // container to render in
-
-      elements: [
-        {
-          data: { id: 'a', weight: 500, title: 'Início' },
-          classes: ['state'],
-        },
-        {
-          data: { id: 'b', title: 'T0' },
-          classes: ['transition'],
-        },
-        {
-          data: { id: 'c', title: 'TAD' },
-          classes: ['state'],
-        },
-        {
-          data: { id: 'd', title: 'T1' },
-          classes: ['transition'],
-        },
-        {
-          data: { id: 'e', title: 'Ponteiros' },
-          classes: ['state'],
-        },
-        {
-          data: { id: 'f', title: 'Recursão' },
-          classes: ['state'],
-        },
-        {
-          data: { id: 'ab', source: 'a', target: 'b', title: '5' },
-        },
-        {
-          data: { id: 'bc', source: 'b', target: 'c', title: '1' },
-        },
-        {
-          data: { id: 'cd', source: 'c', target: 'd', title: '1' },
-        },
-        {
-          data: { id: 'de', source: 'd', target: 'e', title: '1' },
-        },
-        {
-          data: { id: 'df', source: 'd', target: 'f', title: '1' },
-        },
-      ],
-
+      container: container.current, 
+      elements: elements,
       style: [
         {
           selector: 'node',
@@ -117,9 +75,13 @@ const GraphDisplayer = () => {
           console.log(el);
           el.style('background-color', 'white');
         }
-        event.target.style('background-color', 'magenta');
+        // event.target.style('background-color', 'magenta');
         setSelectedElement(target.id());
-        target.data('title', 'Início :)');
+        // cy.add({
+        //   data: { id: 'aaa', title: 'T0' },
+        //   classes: ['transition'],
+        // });
+        // target.data('title', 'Início :)');
       }
     });
 

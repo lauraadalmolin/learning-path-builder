@@ -8,6 +8,48 @@ import learningPathService from '../../service/learning-path.service';
 
 import styles from './style.module.css';
 
+const ELEMENTS =  [
+  {
+    data: { id: 'a', weight: 500, title: 'Início' },
+    classes: ['state'],
+  },
+  {
+    data: { id: 'b', title: 'T0' },
+    classes: ['transition'],
+  },
+  {
+    data: { id: 'c', title: 'TAD' },
+    classes: ['state'],
+  },
+  {
+    data: { id: 'd', title: 'T1' },
+    classes: ['transition'],
+  },
+  {
+    data: { id: 'e', title: 'Ponteiros' },
+    classes: ['state'],
+  },
+  {
+    data: { id: 'f', title: 'Recursão' },
+    classes: ['state'],
+  },
+  {
+    data: { id: 'ab', source: 'a', target: 'b', title: '5' },
+  },
+  {
+    data: { id: 'bc', source: 'b', target: 'c', title: '1' },
+  },
+  {
+    data: { id: 'cd', source: 'c', target: 'd', title: '1' },
+  },
+  {
+    data: { id: 'de', source: 'd', target: 'e', title: '1' },
+  },
+  {
+    data: { id: 'df', source: 'd', target: 'f', title: '1' },
+  },
+];
+
 const Builder = () => {
   const [loading, setLoading] = useState(true);
   const [lPathData, setLPathData] = useState();
@@ -66,7 +108,7 @@ const Builder = () => {
     return <div className={styles.externalContainer}>
       <Navbar learningPathData={lPathData} showOptions={true} saveNameHandler={saveName} savePathHandler={savePath}/>
       <div className={styles.rowContainer}>
-        <GraphDisplayer/>
+        <GraphDisplayer elements={ELEMENTS}/>
         <SideSection/>
       </div>
     </div>;
