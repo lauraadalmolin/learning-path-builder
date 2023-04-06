@@ -3,20 +3,12 @@ import Button from '../button';
 import ElementForm from '../element-form';
 import SectionHeader from '../section-header';
 import TransitionForm from '../transition-form';
+
+import FORM_TYPE from '../../constants/form_type.json';
+
 import styles from './style.module.css';
 
-const FORM_TYPE = {
-  Transition: 'TRANSITION',
-  Element: 'ELEMENT'
-}
-
-const SideSection = () => {
-  const [formType, setFormType] = useState(FORM_TYPE.Element);
-
-  const showForm = (type) => {
-    console.log(type)
-    setFormType(type);
-  }
+const SideSection = ({ formType, showForm, elementHandler }) => {
 
   const getBtnClass = (type) => {
     if (formType === type) return 'primary';
@@ -38,7 +30,7 @@ const SideSection = () => {
       </div>
       <div className={styles.spacer}></div>
       <div className={styles.section}>
-        { formType === FORM_TYPE.Element && <ElementForm/> }
+        { formType === FORM_TYPE.Element && <ElementForm saveState={elementHandler}/> }
         { formType === FORM_TYPE.Transition && <TransitionForm/> }
       </div>
     </div>

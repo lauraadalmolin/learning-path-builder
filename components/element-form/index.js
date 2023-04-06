@@ -1,8 +1,8 @@
+import { useState } from 'react';
+
 import Input from '../input';
 import Button from '../button';
 import SectionHeader from '../section-header';
-
-import { useState } from 'react';
 
 import styles from './style.module.css';
 
@@ -14,8 +14,7 @@ const DEFAULT_STATE = {
   id: { value: null, isValid: true }
 };
 
-const ElementForm = () => {
-
+const ElementForm = ({ saveState }) => {
   const [inputs, setInputs] = useState(DEFAULT_STATE);
 
   const isRequired = (inputValue) => {
@@ -88,6 +87,8 @@ const ElementForm = () => {
 
     try {
       console.log(formData);
+      saveState(formData);
+      // dispatch({ type: 'elementForm', formData });
       resetForm();
     } catch (error) {
       alert(

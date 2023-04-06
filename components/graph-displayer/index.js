@@ -12,56 +12,12 @@ const GraphDisplayer = ({ elements }) => {
     const cy = cytoscape({
       container: container.current, 
       elements: elements,
-      style: [
-        {
-          selector: 'node',
-          style: {
-            'text-halign': 'center',
-            'text-valign': 'center',
-          },
-        },
-        {
-          selector: '.state',
-          css: {
-            'background-color': 'white',
-            'border-color': 'rgb(104, 104, 104)',
-            'border-width': '2px',
-            'color': 'black',
-            'width': '100px',
-            'height': '100px',
-            'label': 'data(title)',
-          },
-        },
-        {
-          selector: '.transition',
-          css: {
-            'background-color': 'black',
-            'width': '60px',
-            'height': '120px',
-            'label': 'data(title)',
-            'shape': 'rectangle',
-            'color': 'white',
-          },
-        },
-        {
-          selector: 'edge',
-          style: {
-            'width': 5,
-            'line-color': 'rgb(104, 104, 104)',
-            'target-arrow-color': 'rgb(104, 104, 104)',
-            'target-arrow-shape': 'triangle',
-            'curve-style': 'bezier',
-            'label': 'data(title)',
-            'text-margin-y': '-15px',
-          },
-        },
-      ],
-
+      style: STYLE, 
       layout: {
         name: 'grid',
         rows: 1,
-      },
-    });
+      }
+    })
 
     cy.on('select', (event) => {
       const target = event.target;

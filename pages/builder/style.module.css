@@ -6,3 +6,9 @@
   display: flex;
   height: calc(100vh - 3.4rem);
 }
+
+.container {
+  width: 65vw;
+  display: flex;
+  background-color: var(--offwhite);
+}
