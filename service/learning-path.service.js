@@ -1,5 +1,6 @@
 export default {
-  save: async (lPathObj) => {
+  save: async (lPathObj, graphData) => {
+    lPathObj.graph = graphData;
     const response = await fetch('/api/save-lpath', {
       method: 'POST',
       headers: {

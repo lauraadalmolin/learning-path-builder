@@ -1,5 +1,131 @@
 {
   "id": "a00839f6-4043-7f84-f3e5-3dd7e4225dd0",
   "name": "Modelador de Rotas de Aprendizagem",
-  "graph": {}
+  "graph": {
+    "nodes": [
+      {
+        "data": {
+          "id": "94d87e11-7c0c-434f-b4ea-1fe848dca287"
+        },
+        "position": {
+          "x": 516.3464190255158,
+          "y": -108.62730652962621
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "c7c89feb-60f3-1001-76d4-9534be283502",
+          "title": "aaa",
+          "description": "aaa",
+          "link": "aaa",
+          "focus": "12"
+        },
+        "position": {
+          "x": 150.3940324421124,
+          "y": 193.51881434884376
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": "state"
+      },
+      {
+        "data": {
+          "id": "d4bab27e-4766-e3bc-91c3-d23626c4b4b7",
+          "title": "bbb",
+          "description": "bbb",
+          "link": "bbb",
+          "focus": "12"
+        },
+        "position": {
+          "x": 256.1301031564239,
+          "y": -121.07583634093757
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": "state"
+      },
+      {
+        "data": {
+          "id": "88ee0877-5373-5134-c668-0309a6305f2e",
+          "title": "ALEXITO",
+          "description": "ALEXITO",
+          "link": "LINK",
+          "focus": "90"
+        },
+        "position": {
+          "x": 79.41485075730787,
+          "y": 43.714121859328074
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": "state"
+      },
+      {
+        "data": {
+          "id": "2887811f-bc22-62fc-5a4f-0078825806d3",
+          "title": "Algoritmos e Estruturas de Dados",
+          "description": "Disciplina do primeiro ano da ECOMP",
+          "link": "",
+          "focus": "5"
+        },
+        "position": {
+          "x": 288.0707245504477,
+          "y": 371.1019486870816
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": "state"
+      },
+      {
+        "data": {
+          "id": "a46417d6-7c1b-e811-14be-48ca15fb54aa",
+          "title": "ABACAXI ABACATE\nAMORA",
+          "name": "AAAAAAAAAAAAAAAAAAAA",
+          "description": "AA",
+          "link": "",
+          "focus": "21"
+        },
+        "position": {
+          "x": -37.156713402340166,
+          "y": -208.07507933448713
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": "state"
+      }
+    ]
+  }
 }
