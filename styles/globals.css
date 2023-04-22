@@ -27,6 +27,10 @@
   --red-600: #acacac;
 }
 
+.hidden-anchor {
+  display: none;
+}
+
 /* @media (prefers-color-scheme: dark) {
     
 } */
