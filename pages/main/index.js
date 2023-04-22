@@ -14,6 +14,7 @@ import strings from '../../constants/strings.json';
 
 import styles from './style.module.css';
 import { assembleQuestion } from '../../utils/strings';
+import { downloadFile } from '../../utils/download-file';
 
 const Main = () => {
   const router = useRouter();
@@ -62,8 +63,10 @@ const Main = () => {
     hideModal();
   }
 
-  const downloadLPath = () => {
-    console.log('TODO: Download fn');
+  const downloadLPath = async (lPathId) => {
+    const res = await learningPathService.getById(lPathId);
+    const updatedLPath = res.data;
+    downloadFile(document, updatedLPath);
   }
 
   const loadSummaries = async () => {
@@ -98,11 +101,12 @@ const Main = () => {
             focusBadge='10 foco'
             lPath={el}
             deleteHandler={showModal}
-            downloadHandler={downloadLPath}
+            downloadHandler={() => downloadLPath(el.id)}
             navigateHandler={() => navigateHandler(el.id)}
           />
         ))}
       </div>
+      <a id="downloadAnchorElem" className='hidden-anchor' />
     </div>
   );
 };
