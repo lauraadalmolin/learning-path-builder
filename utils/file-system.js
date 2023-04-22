@@ -30,7 +30,6 @@ const createFile = (fileAsJSON) => {
   try {
     const fileId = fileAsJSON.id;
     const fileAsString = JSON.stringify(fileAsJSON, null, 2);
-    console.log(fileAsString);
     const fileName = getFileName(fileId)
     const filePath = getFilePath(fileName);
 
