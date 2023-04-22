@@ -11,7 +11,7 @@ import styles from './style.module.css';
 
 const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, saveNameHandler, downloadPathHandler }) => {
   const [inputVisible, setInputVisible] = useState(false);
-  const [headerText, setHeaderText] = useState(strings.navbarHomeHeaderText);
+  const [headerText, setHeaderText] = useState('');
 
   const router = useRouter();
 
@@ -41,13 +41,18 @@ const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, sav
   }, [learningPathData]);
 
   useEffect(() => {
+    if (!learningPathData) return;
     if (!showOptions) return;
 
-    if (!inputVisible && !headerText) setInputVisible(true);
+    if (headerText == '') {
+      setHeaderText(learningPathData.name ?? strings.navbarHomeHeaderText);
+    }
+
+    if (!inputVisible && !headerText && !learningPathData.name) setInputVisible(true);
     if (inputVisible || !headerText) return;
-
+    
+    console.log('infernooooooo', learningPathData)
     saveNameHandler(headerText);
-
   }, [inputVisible])
 
   return (
