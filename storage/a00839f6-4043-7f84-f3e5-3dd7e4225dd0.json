@@ -1,15 +1,17 @@
 {
   "id": "a00839f6-4043-7f84-f3e5-3dd7e4225dd0",
-  "name": "Modelador de Rotas de Aprendizagem",
+  "name": "21 pilotos",
   "graph": {
     "nodes": [
       {
         "data": {
-          "id": "94d87e11-7c0c-434f-b4ea-1fe848dca287"
+          "id": "a",
+          "title": "Algoritmos e Estruturas de Dados",
+          "parent": "b"
         },
         "position": {
-          "x": 516.3464190255158,
-          "y": -108.62730652962621
+          "x": 85.540336614308,
+          "y": -58.698450252201944
         },
         "group": "nodes",
         "removed": false,
@@ -22,57 +24,49 @@
       },
       {
         "data": {
-          "id": "c7c89feb-60f3-1001-76d4-9534be283502",
-          "title": "aaa",
-          "description": "aaa",
-          "link": "aaa",
-          "focus": "12"
+          "id": "b",
+          "title": "|            Foco: 8             |"
         },
         "position": {
-          "x": 150.3940324421124,
-          "y": 193.51881434884376
+          "x": 85.54033661430799,
+          "y": -58.69845025220195
         },
         "group": "nodes",
         "removed": false,
         "selected": false,
-        "selectable": true,
+        "selectable": false,
         "locked": false,
         "grabbable": true,
         "pannable": false,
-        "classes": "state"
+        "classes": ""
       },
       {
         "data": {
-          "id": "d4bab27e-4766-e3bc-91c3-d23626c4b4b7",
-          "title": "bbb",
-          "description": "bbb",
-          "link": "bbb",
-          "focus": "12"
+          "id": "d",
+          "title": "Teoria da Computação",
+          "parent": "e"
         },
         "position": {
-          "x": 256.1301031564239,
-          "y": -121.07583634093757
+          "x": 86.49358473253038,
+          "y": 127.10719688808229
         },
         "group": "nodes",
         "removed": false,
-        "selected": false,
+        "selected": true,
         "selectable": true,
         "locked": false,
         "grabbable": true,
         "pannable": false,
-        "classes": "state"
+        "classes": ""
       },
       {
         "data": {
-          "id": "88ee0877-5373-5134-c668-0309a6305f2e",
-          "title": "ALEXITO",
-          "description": "ALEXITO",
-          "link": "LINK",
-          "focus": "90"
+          "id": "e",
+          "title": "Foco: 5"
         },
         "position": {
-          "x": 79.41485075730787,
-          "y": 43.714121859328074
+          "x": 86.4935847325304,
+          "y": 127.10719688808229
         },
         "group": "nodes",
         "removed": false,
@@ -81,19 +75,16 @@
         "locked": false,
         "grabbable": true,
         "pannable": false,
-        "classes": "state"
+        "classes": ""
       },
       {
         "data": {
-          "id": "2887811f-bc22-62fc-5a4f-0078825806d3",
-          "title": "Algoritmos e Estruturas de Dados",
-          "description": "Disciplina do primeiro ano da ECOMP",
-          "link": "",
-          "focus": "5"
+          "id": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
+          "title": "Foco: 10"
         },
         "position": {
-          "x": 288.0707245504477,
-          "y": 371.1019486870816
+          "x": 311.0758654609042,
+          "y": -58.15689449266196
         },
         "group": "nodes",
         "removed": false,
@@ -102,20 +93,20 @@
         "locked": false,
         "grabbable": true,
         "pannable": false,
-        "classes": "state"
+        "classes": ""
       },
       {
         "data": {
-          "id": "a46417d6-7c1b-e811-14be-48ca15fb54aa",
-          "title": "ABACAXI ABACATE\nAMORA",
-          "name": "AAAAAAAAAAAAAAAAAAAA",
-          "description": "AA",
-          "link": "",
-          "focus": "21"
+          "id": "8c220348-3d8d-51bf-3b03-a6542c88fc48",
+          "title": "Matemática",
+          "description": "uma cadeira legal",
+          "link": "n tem",
+          "parent": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
+          "focus": "10"
         },
         "position": {
-          "x": -37.156713402340166,
-          "y": -208.07507933448713
+          "x": 311.0758654609042,
+          "y": -58.15689449266197
         },
         "group": "nodes",
         "removed": false,
@@ -124,7 +115,68 @@
         "locked": false,
         "grabbable": true,
         "pannable": false,
-        "classes": "state"
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "2c55178c-f828-ddee-4670-21631a35c839",
+          "title": "Foco: 9"
+        },
+        "position": {
+          "x": 317.63660775111646,
+          "y": 127.87292754665043
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "eef2187b-0041-89d1-d36f-350b0c7f864d",
+          "title": "Física II",
+          "description": "Disciplina do segundo ano de ECOMP",
+          "link": "nao tem",
+          "parent": "2c55178c-f828-ddee-4670-21631a35c839",
+          "focus": "9"
+        },
+        "position": {
+          "x": 317.63660775111646,
+          "y": 127.87292754665042
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "ad",
+          "source": "b",
+          "target": "e"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
       }
     ]
   }
