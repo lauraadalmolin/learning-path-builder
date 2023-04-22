@@ -1,10 +1,9 @@
-import { useState } from 'react';
 import Button from '../button';
 import ElementForm from '../element-form';
 import SectionHeader from '../section-header';
 import TransitionForm from '../transition-form';
 
-import FORM_TYPE from '../../constants/form_type.json';
+import FORM_TYPE from '../../constants/form-type.json';
 
 import styles from './style.module.css';
 
