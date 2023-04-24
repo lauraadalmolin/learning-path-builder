@@ -14,7 +14,7 @@ import FORM_TYPE from '../../constants/form-type.json';
 
 import styles from './style.module.css';
 
-import { STYLE } from '../../constants/graph-style';
+import { STYLE, PRIMARY_COLOR, LABEL_COLOR, HIGHLIGHT_COLOR, LABEL_HIGHLIGHT_COLOR } from '../../constants/graph-style';
 
 const Builder = () => {
   const [cy, setCy] = useState();
@@ -22,9 +22,12 @@ const Builder = () => {
   const [loading, setLoading] = useState(true);
   const [lPathData, setLPathData] = useState();
   const [selectedElement, setSelectedElement] = useState();
+  
   const router = useRouter();
-
   const container = useRef();
+
+  const selectedElementStateRef = useRef();
+  selectedElementStateRef.current = selectedElement;
 
   useEffect(() => {
     if (loading) return;
@@ -38,11 +41,58 @@ const Builder = () => {
         fit: true,
         padding: 100,
       },
-      boxSelectionEnabled: true
+      // boxSelectionEnabled: true
     })
+
+    const updateElementColor = (childId, color, labelColor) => {
+      const childElement = cy.getElementById(childId);
+      childElement.style('background-color', color);
+
+      const parentElement = childElement.parent();
+      parentElement.style('background-color', color);
+      parentElement.style('text-background-color', labelColor);
+    }
+    
+    // cy.on('tap', (event) => {
+    //   const targetElement = event.target;
+    //   console.log(event);
+    //   if (targetElement === cy) {
+    //     console.log('hum, interesting')
+    //     setSelectedElement(null);
+    //   }
+    // });
+
+    cy.on('select', (event) => {
+      const targetElement = event.target;
+
+      const targetId = targetElement.id();
+      const targetChildId = targetElement.isChild() ? targetId : targetElement.children()[0].id();
+      const currSelectedId = selectedElementStateRef.current;
+
+      if (currSelectedId == targetChildId) {
+        return;
+      }
+
+      if (currSelectedId) {
+        updateElementColor(currSelectedId, PRIMARY_COLOR, LABEL_COLOR);
+      }
+
+      setFormType(FORM_TYPE.Element);
+      setSelectedElement(targetChildId);
+      updateElementColor(targetChildId, HIGHLIGHT_COLOR, LABEL_HIGHLIGHT_COLOR)
+    });
 
     setCy(cy);
   }, [loading]);
+
+  const updateElementColor = (childId, color, labelColor) => {
+    const childElement = cy.getElementById(childId);
+    childElement.style('background-color', color);
+
+    const parentElement = childElement.parent();
+    parentElement.style('background-color', color);
+    parentElement.style('text-background-color', labelColor);
+  }
 
   const showFormHandler = (type) => {
     setFormType(type);
@@ -96,18 +146,26 @@ const Builder = () => {
 
     const learningPathId = router.query.learningPathId;
     loadLearningPathData(learningPathId);  
-
   }, [router.query]);
 
-  const elementHandlerFn = async (elementData) => {
-    const focusNode = createFocusNode(elementData.focus);
-    const elementNode = createElementNode(elementData, focusNode.data.id);
-    cy.add(focusNode);
-    cy.add(elementNode);
+  const elementSubmitHandlerFn = async (elementData) => {
+    if (elementData.id) {
+      console.log('update element node');
+    } else {
+      const focusNode = createFocusNode(elementData.focus);
+      const elementNode = createElementNode(elementData, focusNode.data.id);
+      cy.add(focusNode);
+      cy.add(elementNode);
+    }
     await savePath();
   }
 
-  const transitionHandlerFn = (transitionData) => {
+  const elementCancelHandlerFn = () => {
+    updateElementColor(selectedElement, PRIMARY_COLOR, LABEL_COLOR)
+    setSelectedElement(null);
+  }
+
+  const transitionSubmitHandlerFn = (transitionData) => {
 
   }
 
@@ -126,8 +184,8 @@ const Builder = () => {
       <div className={styles.rowContainer}>
         <div ref={container} className={styles.container}></div>
         <SideSection 
-          formType={formType} showForm={showFormHandler}
-          elementHandler={elementHandlerFn} transitionHandler={transitionHandlerFn}/>
+          formType={formType} showForm={showFormHandler} selectedObj={selectedElement} lPathData={lPathData}
+          elementSubmitHandler={elementSubmitHandlerFn} elementCancelHandler={elementCancelHandlerFn} transitionHandler={transitionSubmitHandlerFn}/>
       </div>
       <a id="downloadAnchorElem" className={styles.hiddenAnchor} />
     </div>;

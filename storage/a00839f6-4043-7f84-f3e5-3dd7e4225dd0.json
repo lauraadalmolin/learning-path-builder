@@ -5,9 +5,12 @@
     "nodes": [
       {
         "data": {
-          "id": "a",
+          "id": "abacaxi",
           "title": "Algoritmos e Estruturas de Dados",
-          "parent": "b"
+          "description": "uma cadeira legal",
+          "link": "n tem",
+          "parent": "banana",
+          "focus": "10"
         },
         "position": {
           "x": 85.540336614308,
@@ -24,8 +27,8 @@
       },
       {
         "data": {
-          "id": "b",
-          "title": "|            Foco: 8             |"
+          "id": "banana",
+          "title": "Foco: 8"
         },
         "position": {
           "x": 85.54033661430799,
@@ -34,7 +37,7 @@
         "group": "nodes",
         "removed": false,
         "selected": false,
-        "selectable": false,
+        "selectable": true,
         "locked": false,
         "grabbable": true,
         "pannable": false,
@@ -52,7 +55,7 @@
         },
         "group": "nodes",
         "removed": false,
-        "selected": true,
+        "selected": false,
         "selectable": true,
         "locked": false,
         "grabbable": true,
@@ -123,8 +126,8 @@
           "title": "Foco: 9"
         },
         "position": {
-          "x": 317.63660775111646,
-          "y": 127.87292754665043
+          "x": -143.30892364499243,
+          "y": -59.910281351912516
         },
         "group": "nodes",
         "removed": false,
@@ -145,12 +148,12 @@
           "focus": "9"
         },
         "position": {
-          "x": 317.63660775111646,
-          "y": 127.87292754665042
+          "x": -143.30892364499243,
+          "y": -59.91028135191252
         },
         "group": "nodes",
         "removed": false,
-        "selected": false,
+        "selected": true,
         "selectable": true,
         "locked": false,
         "grabbable": true,
@@ -162,7 +165,7 @@
       {
         "data": {
           "id": "ad",
-          "source": "b",
+          "source": "banana",
           "target": "e"
         },
         "position": {

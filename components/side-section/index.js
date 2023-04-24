@@ -6,8 +6,31 @@ import TransitionForm from '../transition-form';
 import FORM_TYPE from '../../constants/form-type.json';
 
 import styles from './style.module.css';
+import { useEffect, useState } from 'react';
 
-const SideSection = ({ formType, showForm, elementHandler }) => {
+const SideSection = ({ formType, showForm, elementSubmitHandler, elementCancelHandler, selectedObj, lPathData }) => {
+
+  const [formData, setFormData] = useState();
+
+  useEffect(() => {
+    if (!selectedObj) {
+      setFormData(null);
+      return;
+    } 
+
+    const typeMap = new Map([
+      [FORM_TYPE.Element, 'nodes'],
+      [FORM_TYPE.Transition, 'edges'],
+    ]);
+
+    lPathData['graph'][typeMap.get(formType)]
+      .forEach(element => {
+        if (element.data.id === selectedObj) {
+          console.log(element, '--')
+          setFormData(element);
+        }
+      });
+  }, [selectedObj]);
 
   const getBtnClass = (type) => {
     if (formType === type) return 'primary';
@@ -29,7 +52,7 @@ const SideSection = ({ formType, showForm, elementHandler }) => {
       </div>
       <div className={styles.spacer}></div>
       <div className={styles.section}>
-        { formType === FORM_TYPE.Element && <ElementForm saveState={elementHandler}/> }
+        {formType === FORM_TYPE.Element && <ElementForm saveState={elementSubmitHandler} cancelHandler={elementCancelHandler} formData={formData}/> }
         { formType === FORM_TYPE.Transition && <TransitionForm/> }
       </div>
     </div>

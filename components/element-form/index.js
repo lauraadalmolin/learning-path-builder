@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Input from '../input';
 import Button from '../button';
@@ -7,15 +7,29 @@ import SectionHeader from '../section-header';
 import styles from './style.module.css';
 
 const DEFAULT_STATE = {
-  name: { value: '', isValid: false },
+  title: { value: '', isValid: false },
   description: { value: '', isValid: false },
   focus: { value: '', isValid: false },
   link: { value: '', isValid: true },
   id: { value: null, isValid: true }
 };
 
-const ElementForm = ({ saveState }) => {
+const ElementForm = ({ saveState, cancelHandler, formData }) => {
   const [inputs, setInputs] = useState(DEFAULT_STATE);
+
+  useEffect(() => {
+    if (!formData) {
+      resetForm();
+      return;
+    }
+
+    const newState = Object.assign({}, DEFAULT_STATE);
+    for (const [key, _] of Object.entries(newState)) {
+      newState[key] = { value: formData.data[key] ?? '', isValid: true }
+    }
+
+    setInputs(newState);
+  }, [formData]);
 
   const isRequired = (inputValue) => {
     return inputValue.length > 0;
@@ -26,7 +40,7 @@ const ElementForm = ({ saveState }) => {
   }
 
   const validationFunctionsMap = new Map([
-    ['name', isRequired],
+    ['title', isRequired],
     ['description', isRequired],
     ['link', isNotRequired],
     ['focus', isRequired],
@@ -45,14 +59,14 @@ const ElementForm = ({ saveState }) => {
   };
 
   const isFormValid = () => {
-    const nameValid = isRequired(inputs.name.value);
+    const titleValid = isRequired(inputs.title.value);
     const descriptionValid = isRequired(inputs.description.value);
     const focusValid = isRequired(inputs.focus.value);
 
-    if (!nameValid || !focusValid || !descriptionValid) {
+    if (!titleValid || !focusValid || !descriptionValid) {
       setInputs((curInputs) => {
         return {
-          name: { value: curInputs.name.value, isValid: nameValid },
+          title: { value: curInputs.title.value, isValid: titleValid },
           description: { value: curInputs.description.value, isValid: descriptionValid },
           focus: {
             value: curInputs.focus.value,
@@ -79,7 +93,7 @@ const ElementForm = ({ saveState }) => {
     }
 
     const formData = {
-      name: inputs.name.value,
+      title: inputs.title.value,
       description: inputs.description.value,
       focus: inputs.focus.value,
       link: inputs.link.value
@@ -107,8 +121,8 @@ const ElementForm = ({ saveState }) => {
       </div>
       <Input label='Nome do conteúdo' inputConfig={{
         placeholder: 'Algoritmos e estruturas de dados',
-        value: inputs.name.value,
-        onChange: inputChangedHandler.bind(this, 'name'),
+        value: inputs.title.value,
+        onChange: inputChangedHandler.bind(this, 'title'),
       }}></Input>
       <Input label='Descrição' inputConfig={{
         placeholder: 'Disciplina do primeiro ano de ECOMP',
@@ -127,7 +141,7 @@ const ElementForm = ({ saveState }) => {
         onChange: inputChangedHandler.bind(this, 'link')
       }}></Input>
       <div className={styles.btnContainer}>
-        <Button type='secondary' size='big'>
+        <Button onClickHandler={cancelHandler} type='secondary' size='big'>
           Cancelar
         </Button>
         <Button onClickHandler={submitForm} type='primary' size='big'>
