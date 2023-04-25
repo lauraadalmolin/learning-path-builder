@@ -35,7 +35,7 @@ const ElementForm = ({ saveState, cancelHandler, formData }) => {
     return inputValue.length > 0;
   };
 
-  const isNotRequired = (inputValue) => {
+  const isNotRequired = (_) => {
     return true;
   }
 
@@ -96,14 +96,13 @@ const ElementForm = ({ saveState, cancelHandler, formData }) => {
       title: inputs.title.value,
       description: inputs.description.value,
       focus: inputs.focus.value,
-      link: inputs.link.value
+      link: inputs.link.value,
+      id: inputs.id.value
     };
 
     try {
-      console.log(formData);
       saveState(formData);
-      // dispatch({ type: 'elementForm', formData });
-      resetForm();
+      if (!formData.id) resetForm();
     } catch (error) {
       alert(
         error + ' ocorreu algum erro no cadastro, tente novamente mais tarde'

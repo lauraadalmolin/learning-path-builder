@@ -17,7 +17,7 @@ const createElementNode = (elementData, parentId) => {
     return {
         data: {
             id: uuid(),
-            title: elementData.name,
+            title: elementData.title,
             description: elementData.description,
             link: elementData.link,
             parent: parentId, 
@@ -30,4 +30,17 @@ const createElementNode = (elementData, parentId) => {
     };
 }
 
-export { createFocusNode, createElementNode };
+const updateFocusNode = (focusNode, elementData) => {
+    focusNode.data().title = "Foco: " + elementData.focus;
+};
+
+const updateElementNode = (elementNode, elementData) => {
+    console.log(elementData);
+    for (const [key, value] of Object.entries(elementData)) {
+        elementNode.data()[key] = value;
+        console.log(key, value)
+    }
+
+};
+
+export { createFocusNode, createElementNode, updateFocusNode, updateElementNode };

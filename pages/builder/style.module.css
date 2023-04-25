@@ -11,4 +11,5 @@
   width: 65vw;
   display: flex;
   background-color: var(--offwhite);
+  cursor: pointer;
 }

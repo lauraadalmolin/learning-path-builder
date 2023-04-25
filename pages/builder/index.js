@@ -7,7 +7,7 @@ import Navbar from '../../components/navbar';
 import SideSection from '../../components/side-section';
 import learningPathService from '../../service/learning-path.service';
 
-import { createElementNode, createFocusNode } from '../../utils/graph-handler';
+import { createElementNode, createFocusNode, updateElementNode, updateFocusNode } from '../../utils/graph-handler';
 import { downloadFile } from '../../utils/download-file';
 
 import FORM_TYPE from '../../constants/form-type.json';
@@ -149,14 +149,23 @@ const Builder = () => {
   }, [router.query]);
 
   const elementSubmitHandlerFn = async (elementData) => {
+    let elementNode, focusNode;
     if (elementData.id) {
-      console.log('update element node');
+      elementNode = cy.getElementById(elementData.id);
+      updateElementNode(elementNode, elementData);
+      
+      focusNode = elementNode.parent();
+      updateFocusNode(focusNode, elementData);
+
+      // possible performance bottleneck since for big graphs it would require re-rendering
+      const graphState = cy.elements().remove();
+      graphState.restore();
     } else {
-      const focusNode = createFocusNode(elementData.focus);
-      const elementNode = createElementNode(elementData, focusNode.data.id);
-      cy.add(focusNode);
-      cy.add(elementNode);
+      focusNode = createFocusNode(elementData.focus);
+      elementNode = createElementNode(elementData, focusNode.data.id);
     }
+    cy.add(focusNode);
+    cy.add(elementNode);
     await savePath();
   }
 

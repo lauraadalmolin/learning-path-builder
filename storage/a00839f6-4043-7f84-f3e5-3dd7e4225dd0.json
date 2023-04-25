@@ -6,15 +6,15 @@
       {
         "data": {
           "id": "abacaxi",
-          "title": "Algoritmos e Estruturas de Dados",
-          "description": "uma cadeira legal",
-          "link": "n tem",
+          "title": "Algoritmos e Estruturas de Dados II",
+          "description": "cadeira obrigatória",
+          "link": "",
           "parent": "banana",
-          "focus": "10"
+          "focus": "100"
         },
         "position": {
-          "x": 85.540336614308,
-          "y": -58.698450252201944
+          "x": 82.83057850511584,
+          "y": -55.988692143009835
         },
         "group": "nodes",
         "removed": false,
@@ -28,11 +28,11 @@
       {
         "data": {
           "id": "banana",
-          "title": "Foco: 8"
+          "title": "Foco: 100"
         },
         "position": {
-          "x": 85.54033661430799,
-          "y": -58.69845025220195
+          "x": 82.83057850511585,
+          "y": -55.98869214300984
         },
         "group": "nodes",
         "removed": false,
@@ -46,8 +46,11 @@
       {
         "data": {
           "id": "d",
-          "title": "Teoria da Computação",
-          "parent": "e"
+          "title": "Teoria da Computação IV",
+          "parent": "e",
+          "description": "Disciplina obrigatória",
+          "focus": "20",
+          "link": ""
         },
         "position": {
           "x": 86.49358473253038,
@@ -65,7 +68,7 @@
       {
         "data": {
           "id": "e",
-          "title": "Foco: 5"
+          "title": "Foco: 20"
         },
         "position": {
           "x": 86.4935847325304,
@@ -73,7 +76,7 @@
         },
         "group": "nodes",
         "removed": false,
-        "selected": false,
+        "selected": true,
         "selectable": true,
         "locked": false,
         "grabbable": true,
@@ -82,34 +85,16 @@
       },
       {
         "data": {
-          "id": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
-          "title": "Foco: 10"
+          "id": "eef2187b-0041-89d1-d36f-350b0c7f864d",
+          "title": "Física II",
+          "description": "Disciplina do segundo ano de ECOMP",
+          "link": "nao tem",
+          "parent": "2c55178c-f828-ddee-4670-21631a35c839",
+          "focus": "9"
         },
         "position": {
-          "x": 311.0758654609042,
-          "y": -58.15689449266196
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "pannable": false,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "8c220348-3d8d-51bf-3b03-a6542c88fc48",
-          "title": "Matemática",
-          "description": "uma cadeira legal",
-          "link": "n tem",
-          "parent": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
-          "focus": "10"
-        },
-        "position": {
-          "x": 311.0758654609042,
-          "y": -58.15689449266197
+          "x": -143.30892364499243,
+          "y": -59.91028135191252
         },
         "group": "nodes",
         "removed": false,
@@ -140,20 +125,38 @@
       },
       {
         "data": {
-          "id": "eef2187b-0041-89d1-d36f-350b0c7f864d",
-          "title": "Física II",
-          "description": "Disciplina do segundo ano de ECOMP",
-          "link": "nao tem",
-          "parent": "2c55178c-f828-ddee-4670-21631a35c839",
-          "focus": "9"
+          "id": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
+          "title": "Foco: 2"
         },
         "position": {
-          "x": -143.30892364499243,
-          "y": -59.91028135191252
+          "x": 313.73659261533896,
+          "y": 58.91510030246366
         },
         "group": "nodes",
         "removed": false,
-        "selected": true,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "8c220348-3d8d-51bf-3b03-a6542c88fc48",
+          "title": "Matemática IV",
+          "description": "uma cadeira legal",
+          "link": "n tem",
+          "parent": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
+          "focus": "2"
+        },
+        "position": {
+          "x": 313.73659261533896,
+          "y": 58.91510030246365
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
         "selectable": true,
         "locked": false,
         "grabbable": true,
