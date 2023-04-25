@@ -53,11 +53,10 @@ const Builder = () => {
       parentElement.style('text-background-color', labelColor);
     }
     
+    // tap on the background
     // cy.on('tap', (event) => {
     //   const targetElement = event.target;
-    //   console.log(event);
     //   if (targetElement === cy) {
-    //     console.log('hum, interesting')
     //     setSelectedElement(null);
     //   }
     // });
@@ -96,6 +95,8 @@ const Builder = () => {
 
   const showFormHandler = (type) => {
     setFormType(type);
+    updateElementColor(selectedElement, PRIMARY_COLOR, LABEL_COLOR);
+    setSelectedElement(null);
   }
 
   const updateLPathData = (key, value) => {
@@ -175,6 +176,10 @@ const Builder = () => {
   }
 
   const transitionSubmitHandlerFn = (transitionData) => {
+    console.log('builder component', transitionData);
+  }
+
+  const transitionCancelHandlerFn = (transitionData) => {
 
   }
 
@@ -194,7 +199,8 @@ const Builder = () => {
         <div ref={container} className={styles.container}></div>
         <SideSection 
           formType={formType} showForm={showFormHandler} selectedObj={selectedElement} lPathData={lPathData}
-          elementSubmitHandler={elementSubmitHandlerFn} elementCancelHandler={elementCancelHandlerFn} transitionHandler={transitionSubmitHandlerFn}/>
+          elementSubmitHandler={elementSubmitHandlerFn} elementCancelHandler={elementCancelHandlerFn}
+          transitionSubmitHandler={transitionSubmitHandlerFn} transitionCancelHandler={transitionCancelHandlerFn}/>
       </div>
       <a id="downloadAnchorElem" className={styles.hiddenAnchor} />
     </div>;

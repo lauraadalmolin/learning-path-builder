@@ -74,11 +74,11 @@ const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, sav
           </li>
         </div>
         { showOptions && <div className={styles.rightContainer}>
-          <li>
+          {/* <li>
             <Button type='primary' icon='MdCheck'>
               Validar
             </Button>
-          </li>
+          </li> */}
           <li>
             <Button onClickHandler={downloadPathHandler} type='primary' icon='MdDownload'>
               Baixar

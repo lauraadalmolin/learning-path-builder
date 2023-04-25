@@ -76,7 +76,7 @@
         },
         "group": "nodes",
         "removed": false,
-        "selected": true,
+        "selected": false,
         "selectable": true,
         "locked": false,
         "grabbable": true,
@@ -144,7 +144,7 @@
       {
         "data": {
           "id": "8c220348-3d8d-51bf-3b03-a6542c88fc48",
-          "title": "Matemática IV",
+          "title": "Matemática II",
           "description": "uma cadeira legal",
           "link": "n tem",
           "parent": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
@@ -153,6 +153,46 @@
         "position": {
           "x": 313.73659261533896,
           "y": 58.91510030246365
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "7fa4b848-c07f-ca79-b438-46d7509b558d",
+          "title": "Foco: 7"
+        },
+        "position": {
+          "x": 301.0773192285545,
+          "y": -235.3354043391269
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "b5229877-e3e7-a7ba-461c-75ac1a2ba447",
+          "title": "Matemática Discreta II",
+          "description": "uma cadeira obrigatória",
+          "link": "",
+          "parent": "7fa4b848-c07f-ca79-b438-46d7509b558d",
+          "focus": "7"
+        },
+        "position": {
+          "x": 301.0773192285545,
+          "y": -235.3354043391269
         },
         "group": "nodes",
         "removed": false,

@@ -2,7 +2,7 @@ import Multiselect from 'multiselect-react-dropdown';
 
 import styles from './style.module.css';
 
-const Dropdown = ({ label, placeholder, options }) => {
+const Dropdown = ({ label, placeholder, state, singleSelect }) => {
     
     const style = {
         multiselectContainer: {
@@ -34,37 +34,25 @@ const Dropdown = ({ label, placeholder, options }) => {
         chips: { 
             "backgroundColor": "#2dc5da",
             "fontSize": "12px",
-            "margin": "0 6px 0 0"
+            "margin": "0 6px 0 0", 
+            "color": "white"
         },
     }
 
-    const state = {
-        options: [
-            { name: 'Option 1', id: 1 },
-            { name: 'Option 2', id: 2 },
-            { name: 'Option 2', id: 2 },
-            { name: 'Option 2', id: 2 },
-            { name: 'Option 2', id: 2 },
-            { name: 'Option 2', id: 2 },
-            { name: 'Option 2', id: 2 },
-            { name: 'Option 2', id: 2 },
-            { name: 'Option 2', id: 2 },
-            { name: 'Option 3', id: 3 }, { name: 'Option 4', id: 4 }, { name: 'Option 5', id: 5 }, { name: 'Option 6', id: 6 }]
-    };
-
-    const onSelect = (selectedList, selectedItem) => {
-        console.log('on select')
+    const onSelect = (selectedList, _) => {
+        state.selectedValues = [...selectedList];
     }
-
-    const onRemove = (selectedList, removedItem) => {
-        console.log('on remove')
+    
+    const onRemove = (selectedList, _) => {
+        state.selectedValues = [...selectedList];
     }
 
     return <div>
         <span className={styles.label}>{label}</span>
         <Multiselect
+            singleSelect={singleSelect}
             options={state.options} 
-            selectedValues={state.selectedValue}
+            selectedValues={state.selectedValues}
             onSelect={onSelect} 
             onRemove={onRemove} 
             displayValue="name" 

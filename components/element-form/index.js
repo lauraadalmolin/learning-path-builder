@@ -14,7 +14,7 @@ const DEFAULT_STATE = {
   id: { value: null, isValid: true }
 };
 
-const ElementForm = ({ saveState, cancelHandler, formData }) => {
+const ElementForm = ({ saveHandler, cancelHandler, formData }) => {
   const [inputs, setInputs] = useState(DEFAULT_STATE);
 
   useEffect(() => {
@@ -101,7 +101,7 @@ const ElementForm = ({ saveState, cancelHandler, formData }) => {
     };
 
     try {
-      saveState(formData);
+      saveHandler(formData);
       if (!formData.id) resetForm();
     } catch (error) {
       alert(
