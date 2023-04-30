@@ -12,3 +12,10 @@
   justify-content: space-between;
   margin: 0 0 16px;
 }
+
+.messageContainer {
+  background-color: var(--blue-100);
+  padding: 20px 16px;
+  border-radius: 12px;
+  color: var(--blue-900);
+}

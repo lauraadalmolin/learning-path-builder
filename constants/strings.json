@@ -2,5 +2,6 @@
   "navbarHomeHeaderText": "Modelador de Rotas de Aprendizagem",
   "navbarBuilderSampleHeaderText": "Nova Rota de Aprendizagem (clique para editar o nome)",
   "confirmExclusionModalTitle": "Confirmar exclusão",
-  "confirmExclusionModalDescription": "Você tem certeza que deseja excluir a rota"
+  "confirmExclusionModalDescription": "Você tem certeza que deseja excluir a rota",
+  "noPathsFound": "Parece que ainda não há nenhuma rota cadastrada.\n Você pode cadastrar uma rota clicando no botão \"Nova rota\"."
 }

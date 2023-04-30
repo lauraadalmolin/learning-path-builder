@@ -12,9 +12,10 @@ import learningPathService from '../../service/learning-path.service';
 import learningPathSchema from '../../constants/learning-path-schema.json';
 import strings from '../../constants/strings.json';
 
-import styles from './style.module.css';
 import { assembleQuestion } from '../../utils/strings';
 import { downloadFile } from '../../utils/download-file';
+
+import styles from './style.module.css';
 
 const Main = () => {
   const router = useRouter();
@@ -94,6 +95,7 @@ const Main = () => {
             Nova Rota
           </Button>
         </div>
+        {lPaths.length === 0 && <div className={styles.messageContainer}>{strings.noPathsFound}</div>}
         {lPaths.map((el) => (
           <TableRow
             key={el.id}
