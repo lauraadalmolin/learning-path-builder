@@ -5,8 +5,8 @@ import styles from './style.module.css';
 
 const TableRow = ({
   lPath,
-  contentBadge,
-  focusBadge,
+  numberOfElements,
+  numberOfTransitions,
   navigateHandler,
   deleteHandler,
   downloadHandler
@@ -21,8 +21,8 @@ const TableRow = ({
     <div kry={lPath.id} className={styles.tableRow} onClick={navigateHandler}>
       <div className={styles.infoContainer}>
         <span className={styles.pathName}>{lPath.name}</span>
-        <Badge>{contentBadge}</Badge>
-        <Badge>{focusBadge}</Badge>
+        <Badge>{numberOfElements}</Badge>
+        <Badge>{numberOfTransitions}</Badge>
       </div>
       <div>
         <IconButton

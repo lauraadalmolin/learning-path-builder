@@ -1,5 +1,13 @@
 import { getAllFileNames, readFile } from '../../utils/file-system';
 
+const getTotalAmountOfElements = (lPathData) => {
+  return `${lPathData.graph?.nodes?.length ?? 0} conteúdos`;
+}
+
+const getTotalAmountOfTransitions = (lPathData) => {
+  return `${lPathData.graph?.edges?.length ?? 0} transições`;
+}
+
 export default function handler(req, res) {
   const fileNames = getAllFileNames();
   const summaries = [];
@@ -8,9 +16,14 @@ export default function handler(req, res) {
     const response = readFile(fileName);
     if (response.success) {
       const lPathData = JSON.parse(response.data.toString());
+      
+      const summary = { 
+        name: lPathData.name,
+        id: lPathData.id,
+        numberOfElements: getTotalAmountOfElements(lPathData),
+        numberOfTransitions: getTotalAmountOfTransitions(lPathData)
+      };
 
-      // falta adicionar o n° de conteúdos e o nº de foco
-      const summary = { name: lPathData.name, id: lPathData.id };
       summaries.push(summary);
     }
   });

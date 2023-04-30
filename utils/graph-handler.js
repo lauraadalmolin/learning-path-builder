@@ -35,10 +35,8 @@ const updateFocusNode = (focusNode, elementData) => {
 };
 
 const updateElementNode = (elementNode, elementData) => {
-    console.log(elementData);
     for (const [key, value] of Object.entries(elementData)) {
         elementNode.data()[key] = value;
-        console.log(key, value)
     }
 };
 

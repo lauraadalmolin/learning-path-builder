@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+
 import uuid from 'react-uuid';
 
 import Button from '../../components/button';
@@ -16,6 +18,7 @@ import { assembleQuestion } from '../../utils/strings';
 import { downloadFile } from '../../utils/download-file';
 
 import styles from './style.module.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Main = () => {
   const router = useRouter();
@@ -39,6 +42,7 @@ const Main = () => {
     if (res.success) {
       navigateHandler(learningPathId);
     } else {
+      toast.error(strings.errorCreatingLPath);
       console.log(res);
     }
   }
@@ -55,10 +59,10 @@ const Main = () => {
     const res = await learningPathService.delete(targetLPath.id);
     if (res.success) {
       setLPaths((current) => current.filter((lPath) => lPath.id !== targetLPath.id));
-      // show feedback toast
+      toast.success(strings.pathDeletedSuccessfully);
     } else {
-      console.log(res.error);
-      // show feedback toast
+      toast.error(strings.pathDeletedSuccessfully);
+      console.log(res);
     }
 
     hideModal();
@@ -99,8 +103,8 @@ const Main = () => {
         {lPaths.map((el) => (
           <TableRow
             key={el.id}
-            contentBadge='15 conteúdos'
-            focusBadge='10 foco'
+            numberOfElements={el.numberOfElements}
+            numberOfTransitions={el.numberOfTransitions}
             lPath={el}
             deleteHandler={showModal}
             downloadHandler={() => downloadLPath(el.id)}

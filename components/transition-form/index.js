@@ -1,10 +1,14 @@
-import Input from '../input';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css';
+
 import Button from '../button';
 import Dropdown from '../dropdown';
+import Input from '../input';
 import SectionHeader from '../section-header';
 
+import strings from '../../constants/strings.json';
 import styles from './style.module.css';
-import { useEffect, useState } from 'react';
 
 const DEFAULT_STATE = {
   originElement: { options: [], selectedValues: [], isValid: false },
@@ -14,10 +18,10 @@ const DEFAULT_STATE = {
   id: { value: null, isValid: true }
 };
 
-// origin element can be only 1
-// origin can't be on following as well
-// focus is required
-// pre-requisites are not required but can't have origin or destinationElements
+const TOAST_CONFIG = {
+  position: toast.POSITION.BOTTOM_RIGHT,
+  autoClose: 6000
+}
 
 const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, lPathData }) => {
   
@@ -94,7 +98,7 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
         return element;
       }
     });
-    return foundElement.length === 0;
+    return foundElement.length === 0 && destinationElements.length > 0;
   }
 
   const validatePreRequisites = (originElementArr, destinationElements, preRequisites) => {
@@ -125,25 +129,25 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
 
     const originElementValid = validateOriginElement(originElement);
     if (!originElementValid) {
-      console.log('erro no origin element');
+      toast.error(strings.originElementValidationMessage, );
       return false;
     }
 
     const destinationElementsValid = validateDestinationElements(originElement, destinationElements);
     if (!destinationElementsValid) {
-      console.log('erro no destination elements');
+      toast.error(strings.destinationElementsValidationMessage, TOAST_CONFIG);
       return false;
     }
     
     const preRequisitesValid = validatePreRequisites(originElement, destinationElements, preRequisites);
     if (!preRequisitesValid) {
-      console.log('erro nos pre-requisites');
+      toast.error(strings.preRequisitesValidationMessage, TOAST_CONFIG);
       return false;
     }
     
     const focusValid = isRequired(inputs.focus.value);
     if (!focusValid) {
-      console.log('erro no focus');
+      toast.error(strings.focusValidationMessage, TOAST_CONFIG);
       return false;
     }
     
@@ -177,9 +181,7 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
       saveHandler(formData);
       if (!formData.id) resetForm();
     } catch (error) {
-      alert(
-        error + ' ocorreu algum erro no cadastro, tente novamente mais tarde'
-      );
+      toast.error(`${strings.genericError} Erro: ${error}`, TOAST_CONFIG);
     }
   }
 

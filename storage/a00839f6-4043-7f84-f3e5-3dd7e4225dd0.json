@@ -1,6 +1,6 @@
 {
   "id": "a00839f6-4043-7f84-f3e5-3dd7e4225dd0",
-  "name": "21 pilotos",
+  "name": "ECOMP - Teste piloto2",
   "graph": {
     "nodes": [
       {
@@ -10,7 +10,7 @@
           "description": "cadeira obrigatória",
           "link": "",
           "parent": "banana",
-          "focus": "25"
+          "focus": "5"
         },
         "position": {
           "x": 69.40925614327875,
@@ -28,7 +28,7 @@
       {
         "data": {
           "id": "banana",
-          "title": "Foco: 25"
+          "title": "Foco: 5"
         },
         "position": {
           "x": 69.40925614327875,
@@ -49,12 +49,12 @@
           "title": "Teoria da Computação IV",
           "parent": "e",
           "description": "Disciplina obrigatória",
-          "focus": "20",
+          "focus": "4",
           "link": ""
         },
         "position": {
-          "x": 55.17716588824378,
-          "y": -51.843767936412306
+          "x": 151.82559271686546,
+          "y": -182.93013995684174
         },
         "group": "nodes",
         "removed": false,
@@ -68,11 +68,11 @@
       {
         "data": {
           "id": "e",
-          "title": "Foco: 20"
+          "title": "Foco: 4"
         },
         "position": {
-          "x": 55.177165888243785,
-          "y": -51.843767936412306
+          "x": 151.82559271686546,
+          "y": -182.93013995684174
         },
         "group": "nodes",
         "removed": false,
@@ -90,11 +90,11 @@
           "description": "Disciplina do segundo ano de ECOMP",
           "link": "nao tem",
           "parent": "2c55178c-f828-ddee-4670-21631a35c839",
-          "focus": "9"
+          "focus": "5"
         },
         "position": {
-          "x": -185.8097777908099,
-          "y": -144.91198964354749
+          "x": -164.70265009260518,
+          "y": -199.3461610757597
         },
         "group": "nodes",
         "removed": false,
@@ -108,11 +108,11 @@
       {
         "data": {
           "id": "2c55178c-f828-ddee-4670-21631a35c839",
-          "title": "Foco: 9"
+          "title": "Foco: 5"
         },
         "position": {
-          "x": -185.8097777908099,
-          "y": -144.91198964354749
+          "x": -164.70265009260518,
+          "y": -199.3461610757597
         },
         "group": "nodes",
         "removed": false,
@@ -126,7 +126,7 @@
       {
         "data": {
           "id": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
-          "title": "Foco: 2"
+          "title": "Foco: 3"
         },
         "position": {
           "x": 70.58302584508543,
@@ -148,11 +148,91 @@
           "description": "uma cadeira legal",
           "link": "n tem",
           "parent": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
-          "focus": "2"
+          "focus": "3"
         },
         "position": {
           "x": 70.58302584508543,
           "y": -651.8459048223972
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "3de26007-48f0-7b43-e08d-3429bea66160",
+          "title": "Foco: 5"
+        },
+        "position": {
+          "x": -53.83767026997364,
+          "y": -833.5139504077325
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "c337da1f-44d8-3d0c-3e92-31b7732e4f9b",
+          "title": "Matemática I",
+          "description": "disciplina base",
+          "link": "",
+          "parent": "3de26007-48f0-7b43-e08d-3429bea66160",
+          "focus": "5"
+        },
+        "position": {
+          "x": -53.83767026997364,
+          "y": -833.5139504077325
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "772b26cf-d51b-23a0-863f-c7bc74b1de39",
+          "title": "Foco: 2"
+        },
+        "position": {
+          "x": -162.17274404085896,
+          "y": -654.3020898463691
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "3dca7527-d6b2-f2d9-4810-c443c4cd2c17",
+          "title": "Fundamentos de Química",
+          "description": "cadeira base",
+          "link": "",
+          "parent": "772b26cf-d51b-23a0-863f-c7bc74b1de39",
+          "focus": "2"
+        },
+        "position": {
+          "x": -162.17274404085896,
+          "y": -654.3020898463691
         },
         "group": "nodes",
         "removed": false,
@@ -167,10 +247,52 @@
     "edges": [
       {
         "data": {
+          "id": "39bd1348-7ff2-37b7-17dd-f1e69a652740",
+          "source": "3de26007-48f0-7b43-e08d-3429bea66160",
+          "target": "772b26cf-d51b-23a0-863f-c7bc74b1de39",
+          "focus": "2",
+          "preRequisites": []
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "6669ae36-f70d-9c3d-1641-4704d8a78607",
+          "source": "3de26007-48f0-7b43-e08d-3429bea66160",
+          "target": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
+          "focus": "3",
+          "preRequisites": []
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
           "id": "62ab840d-6f3b-e93b-6a45-eefb1d1f672d",
           "source": "banana",
           "target": "2c55178c-f828-ddee-4670-21631a35c839",
-          "focus": "90",
+          "focus": "5",
           "preRequisites": []
         },
         "position": {
@@ -191,7 +313,7 @@
           "id": "ad",
           "source": "banana",
           "target": "e",
-          "focus": "120",
+          "focus": "4",
           "preRequisites": [
             "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6"
           ]
@@ -214,8 +336,10 @@
           "id": "c4417310-f40c-01cb-3852-6fbe6301ca45",
           "source": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
           "target": "banana",
-          "focus": "9",
-          "preRequisites": []
+          "focus": "5",
+          "preRequisites": [
+            "772b26cf-d51b-23a0-863f-c7bc74b1de39"
+          ]
         },
         "position": {
           "x": 0,

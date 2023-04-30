@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Input from '../input';
 import Button from '../button';
@@ -13,6 +15,11 @@ const DEFAULT_STATE = {
   link: { value: '', isValid: true },
   id: { value: null, isValid: true }
 };
+
+const TOAST_CONFIG = {
+  position: toast.POSITION.BOTTOM_RIGHT,
+  autoClose: 6000
+}
 
 const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) => {
   const [inputs, setInputs] = useState(DEFAULT_STATE);
@@ -89,6 +96,7 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
 
   const submitForm = async () => {
     if (!isFormValid()) {
+      toast.error("Os campos marcados com * são obrigatórios", TOAST_CONFIG)
       return;
     }
 
@@ -104,9 +112,7 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
       saveHandler(formData);
       if (!formData.id) resetForm();
     } catch (error) {
-      alert(
-        error + ' ocorreu algum erro no cadastro, tente novamente mais tarde'
-      );
+      toast.error(`${strings.genericError} Erro: ${error}`, TOAST_CONFIG);
     }
   };
 
@@ -118,17 +124,17 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
           Excluir elemento
         </Button> }
       </div>
-      <Input label='Nome do conteúdo' inputConfig={{
+      <Input label='Nome do conteúdo*' inputConfig={{
         placeholder: 'Algoritmos e estruturas de dados',
         value: inputs.title.value,
         onChange: inputChangedHandler.bind(this, 'title'),
       }}></Input>
-      <Input label='Descrição' inputConfig={{
+      <Input label='Descrição*' inputConfig={{
         placeholder: 'Disciplina do primeiro ano de ECOMP',
         value: inputs.description.value,
         onChange: inputChangedHandler.bind(this, 'description'),
       }}></Input>
-      <Input label='Foco' inputConfig={{
+      <Input label='Foco*' inputConfig={{
         placeholder: 'Insira a intensidade de foco necessária',
         value: inputs.focus.value,
         onChange: inputChangedHandler.bind(this, 'focus'),

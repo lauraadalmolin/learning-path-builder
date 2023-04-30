@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import cytoscape from 'cytoscape';
 
@@ -10,11 +12,13 @@ import learningPathService from '../../service/learning-path.service';
 import { createElementNode, createFocusNode, createTransitionEdge, updateElementNode, updateFocusNode, updateTransitionEdge } from '../../utils/graph-handler';
 import { downloadFile } from '../../utils/download-file';
 
+import { STYLE, COLORS } from '../../constants/graph-style';
 import FORM_TYPE from '../../constants/form-type.json';
 
+import strings from '../../constants/strings.json';
 import styles from './style.module.css';
 
-import { STYLE, COLORS } from '../../constants/graph-style';
+const TOAST_CONFIG = { position: toast.POSITION.BOTTOM_LEFT };
 
 const Builder = () => {
   const [cy, setCy] = useState();
@@ -34,7 +38,7 @@ const Builder = () => {
 
     const cy = cytoscape({
       container: container.current,
-      elements: lPathData?.graph,
+      elements: lPathData?.graph?.nodes?.length > 0 ? lPathData.graph : null,
       style: STYLE,
       layout: { 
         name: 'preset',
@@ -143,9 +147,10 @@ const Builder = () => {
     const res = await learningPathService.save(lPathData, graph);
     
     if (res.success) {
-      console.log('Salvo com sucesso');
+      toast.success(strings.savedSuccessfully, TOAST_CONFIG);
     } else {
-      console.log(res.error);
+      toast.error(strings.genericError, TOAST_CONFIG);
+      console.log(res);
     }
   }
 
@@ -162,7 +167,7 @@ const Builder = () => {
       setLoading(false);
     } else {
       router.push('/main');
-      // add toast saying it doesn't exist
+      toast.warning('A rota que você tentou acessar não existe.');
     }
   };
 

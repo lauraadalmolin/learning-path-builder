@@ -51,7 +51,6 @@ const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, sav
     if (!inputVisible && !headerText && !learningPathData.name) setInputVisible(true);
     if (inputVisible || !headerText) return;
     
-    console.log('infernooooooo', learningPathData)
     saveNameHandler(headerText);
   }, [inputVisible])
 
