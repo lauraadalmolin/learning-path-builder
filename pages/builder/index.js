@@ -7,14 +7,14 @@ import Navbar from '../../components/navbar';
 import SideSection from '../../components/side-section';
 import learningPathService from '../../service/learning-path.service';
 
-import { createElementNode, createFocusNode, updateElementNode, updateFocusNode } from '../../utils/graph-handler';
+import { createElementNode, createFocusNode, createTransitionEdge, updateElementNode, updateFocusNode, updateTransitionEdge } from '../../utils/graph-handler';
 import { downloadFile } from '../../utils/download-file';
 
 import FORM_TYPE from '../../constants/form-type.json';
 
 import styles from './style.module.css';
 
-import { STYLE, PRIMARY_COLOR, LABEL_COLOR, HIGHLIGHT_COLOR, LABEL_HIGHLIGHT_COLOR } from '../../constants/graph-style';
+import { STYLE, COLORS } from '../../constants/graph-style';
 
 const Builder = () => {
   const [cy, setCy] = useState();
@@ -44,13 +44,22 @@ const Builder = () => {
       // boxSelectionEnabled: true
     })
 
-    const updateElementColor = (childId, color, labelColor) => {
-      const childElement = cy.getElementById(childId);
-      childElement.style('background-color', color);
+    const updateElementColor = (id, isHighlight) => {
+      const element = cy.getElementById(id);
 
-      const parentElement = childElement.parent();
-      parentElement.style('background-color', color);
-      parentElement.style('text-background-color', labelColor);
+      if (element.isEdge()) {
+        const color = isHighlight ? COLORS.PrimaryHighlight : COLORS.Edge;
+        element.style('line-color', color);
+        element.style('target-arrow-color', color);
+      } else {
+        const color = isHighlight ? COLORS.PrimaryHighlight : COLORS.Primary
+        const labelColor = isHighlight ? COLORS.SecondaryHighlight : COLORS.Secondary
+        element.style('background-color', color);
+
+        const parentElement = element.parent();
+        parentElement.style('background-color', color);
+        parentElement.style('text-background-color', labelColor);
+      }
     }
     
     // tap on the background
@@ -61,41 +70,56 @@ const Builder = () => {
     //   }
     // });
 
-    cy.on('select', (event) => {
-      const targetElement = event.target;
-
-      const targetId = targetElement.id();
-      const targetChildId = targetElement.isChild() ? targetId : targetElement.children()[0].id();
+    const handleSelection = (targetId, formType) => {
       const currSelectedId = selectedElementStateRef.current;
 
-      if (currSelectedId == targetChildId) {
+      if (currSelectedId == targetId) {
         return;
       }
 
       if (currSelectedId) {
-        updateElementColor(currSelectedId, PRIMARY_COLOR, LABEL_COLOR);
+        updateElementColor(currSelectedId, false);
       }
 
-      setFormType(FORM_TYPE.Element);
-      setSelectedElement(targetChildId);
-      updateElementColor(targetChildId, HIGHLIGHT_COLOR, LABEL_HIGHLIGHT_COLOR)
+      setFormType(formType);
+      setSelectedElement(targetId);
+      updateElementColor(targetId, true)
+    }
+
+    cy.on('select', (event) => {
+      const targetElement = event.target;
+      if (targetElement.isEdge()) {
+        handleSelection(targetElement.id(), FORM_TYPE.Transition);
+      } else {
+        const targetChildId = targetElement.isChild() ? targetElement.id() : targetElement.children()[0].id();
+        handleSelection(targetChildId, FORM_TYPE.Element);
+      }
     });
 
     setCy(cy);
   }, [loading]);
 
-  const updateElementColor = (childId, color, labelColor) => {
-    const childElement = cy.getElementById(childId);
-    childElement.style('background-color', color);
+  const updateElementColor = (id, isHighlight) => {
+    const element = cy.getElementById(id);
 
-    const parentElement = childElement.parent();
-    parentElement.style('background-color', color);
-    parentElement.style('text-background-color', labelColor);
+    if (element.isEdge()) {
+      const color = isHighlight ? COLORS.PrimaryHighlight : COLORS.Edge;
+      element.style('line-color', color);
+      element.style('target-arrow-color', color);
+    } else {
+      const color = isHighlight ? COLORS.PrimaryHighlight : COLORS.Primary
+      const labelColor = isHighlight ? COLORS.SecondaryHighlight : COLORS.Secondary
+      element.style('background-color', color);
+
+      const parentElement = element.parent();
+      parentElement.style('background-color', color);
+      parentElement.style('text-background-color', labelColor);
+    }
   }
 
   const showFormHandler = (type) => {
     setFormType(type);
-    updateElementColor(selectedElement, PRIMARY_COLOR, LABEL_COLOR);
+    updateElementColor(selectedElement, false);
     setSelectedElement(null);
   }
 
@@ -170,17 +194,51 @@ const Builder = () => {
     await savePath();
   }
 
-  const elementCancelHandlerFn = () => {
-    updateElementColor(selectedElement, PRIMARY_COLOR, LABEL_COLOR)
+  const elementDeleteHandlerFn = async (elementId) => {
+    const element = cy.getElementById(elementId);
+
+    const parentElement = element.isChild() ? element.parent() : element;
+    const childElement = element.isChild() ? element : element.children()[0];
+    const connectedEdges = parentElement.connectedEdges();
+    
+    cy.remove(connectedEdges);
+    cy.remove(childElement);
+    cy.remove(parentElement);
+
     setSelectedElement(null);
+    await savePath();
   }
 
-  const transitionSubmitHandlerFn = (transitionData) => {
-    console.log('builder component', transitionData);
+  const transitionSubmitHandlerFn = async (transitionData) => {    
+    if (transitionData.id) {
+      // you will only be able to edit one arrow at a time
+      // which means only one id at a time
+      const transitionEdge = cy.getElementById(transitionData.id);
+      updateTransitionEdge(transitionEdge, transitionData);
+      
+      // possible performance bottleneck since for big graphs it would require re-rendering
+      const graphState = cy.elements().remove();
+      graphState.restore();
+    } else {
+      for (const destination of transitionData.destinationElements) {
+        const transitionEdge = createTransitionEdge(transitionData, destination);
+        cy.add(transitionEdge);
+      }
+    }
+
+    await savePath();
   }
 
-  const transitionCancelHandlerFn = (transitionData) => {
+  const transitionDeleteHandlerFn = async (transitionId) => {
+    const transition = cy.getElementById(transitionId);
+    cy.remove(transition);
+    setSelectedElement(null);
+    await savePath();
+  }
 
+  const cancelHandlerFn = () => {
+    updateElementColor(selectedElement, false);
+    setSelectedElement(null);
   }
 
   const downloadLPath = async () => {
@@ -199,8 +257,8 @@ const Builder = () => {
         <div ref={container} className={styles.container}></div>
         <SideSection 
           formType={formType} showForm={showFormHandler} selectedObj={selectedElement} lPathData={lPathData}
-          elementSubmitHandler={elementSubmitHandlerFn} elementCancelHandler={elementCancelHandlerFn}
-          transitionSubmitHandler={transitionSubmitHandlerFn} transitionCancelHandler={transitionCancelHandlerFn}/>
+          elementSubmitHandler={elementSubmitHandlerFn} elementCancelHandler={cancelHandlerFn} elementDeleteHandler={elementDeleteHandlerFn}
+          transitionSubmitHandler={transitionSubmitHandlerFn} transitionCancelHandler={cancelHandlerFn} transitionDeleteHandler={transitionDeleteHandlerFn}/>
       </div>
       <a id="downloadAnchorElem" className={styles.hiddenAnchor} />
     </div>;

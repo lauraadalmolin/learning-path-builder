@@ -19,7 +19,7 @@ const DEFAULT_STATE = {
 // focus is required
 // pre-requisites are not required but can't have origin or destinationElements
 
-const TransitionForm = ({ saveHandler, cancelHandler, formData, lPathData }) => {
+const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, lPathData }) => {
   
   const [inputs, setInputs] = useState(DEFAULT_STATE);
 
@@ -29,15 +29,32 @@ const TransitionForm = ({ saveHandler, cancelHandler, formData, lPathData }) => 
   }, [lPathData]);
 
   useEffect(() => {
-    if (!formData) return;
-    // load formData into state - selectedValues
-    
+    if (!formData || inputs.originElement.options.length === 0) {
+      resetForm();
+      return;
+    }
+
+    const newState = Object.assign({}, inputs);
+    newState.focus = { ...newState.focus, value: formData.data.focus ?? '', isValid: true };
+    newState.id = { ...newState.id, value: formData.data.id, isValid: true };
+    newState.originElement = { ...newState.originElement, selectedValues: getSelectedValuesArr([formData.data.source]), isValid: true }
+    newState.destinationElements = { ...newState.destinationElements, selectedValues: getSelectedValuesArr([formData.data.target]), isValid: true }
+    newState.preRequisites = { ...newState.preRequisites, selectedValues: getSelectedValuesArr(formData.data.preRequisites), isValid: true }
+
+    setInputs(newState);
   }, [formData])
+
+  const getSelectedValuesArr = (ids) => {
+    const idsSet = new Set(ids);
+    return inputs.originElement.options.filter(option => {
+      if (idsSet.has(option.parent)) return option;
+    })
+  }
 
   const formatElements = (elements) => {
     return elements.filter(element => element.data.parent)
       .map(element => {
-        return { name: element.data.title, id: element.data.id }
+        return { name: element.data.title, id: element.data.id, parent: element.data.parent }
       });
   } 
 
@@ -59,7 +76,7 @@ const TransitionForm = ({ saveHandler, cancelHandler, formData, lPathData }) => 
         ...curInputValues,
         originElement: { options: elements, selectedValues: [], isValid: false },
         destinationElements: { options: elements, selectedValues: [], isValid: false },
-        preRequisites: { options: elements, selectedValues: [], isValid: true },
+        preRequisites: { options: elements, selectedValues: new Array(), isValid: true },
         focus: { value: '', isValid: false },
         id: { value: null, isValid: true }
       };
@@ -136,7 +153,7 @@ const TransitionForm = ({ saveHandler, cancelHandler, formData, lPathData }) => 
         originElement: { ...curInputs.originElement, isValid: originElementValid },
         destinationElements: { ...curInputs.destinationElements, isValid: destinationElementsValid },
         preRequisites: { ...curInputs.preRequisites, isValid: preRequisitesValid },
-        focus: { value: '', isValid: focusValid },
+        focus: { ...curInputs.focus, isValid: focusValid },
       };
     });
 
@@ -149,7 +166,7 @@ const TransitionForm = ({ saveHandler, cancelHandler, formData, lPathData }) => 
     }
 
     const formData = {
-      originElement: inputs.originElement.selectedValues,
+      originElement: inputs.originElement.selectedValues[0],
       destinationElements: inputs.destinationElements.selectedValues,
       preRequisites: inputs.preRequisites.selectedValues,
       focus: inputs.focus.value,
@@ -170,10 +187,10 @@ const TransitionForm = ({ saveHandler, cancelHandler, formData, lPathData }) => 
     <div>
       <div className={styles.headerContainer}>
         <SectionHeader>Criar Transição</SectionHeader>
-        { inputs.id.value !== null && <Button type='delete' icon='MdDelete'>Excluir elemento</Button> } 
+        {inputs.id.value !== null && <Button onClickHandler={() => deleteHandler(inputs.id.value)} type='delete' icon='MdDelete'>Excluir Transição</Button> } 
       </div>
       <Dropdown singleSelect={true} state={inputs.originElement} label='Selecione o elemento de origem' placeholder='Buscar...'></Dropdown>
-      <Dropdown state={inputs.destinationElements} label='Selecione os elementos seguintes' placeholder='Buscar...'></Dropdown>
+      <Dropdown singleSelect={inputs.id.value !== null} state={inputs.destinationElements} label={inputs.id.value !== null ? 'Selecione o elemento de destino' : 'Selecione os elementos seguintes'} placeholder='Buscar...'></Dropdown>
       <Dropdown state={inputs.preRequisites} label='Pré-requisitos' placeholder='Buscar...'></Dropdown>
       <Input label='Foco' inputConfig={{
         placeholder: 'Insira a intensidade de foco necessária',

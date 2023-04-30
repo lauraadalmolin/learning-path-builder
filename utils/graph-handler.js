@@ -40,7 +40,32 @@ const updateElementNode = (elementNode, elementData) => {
         elementNode.data()[key] = value;
         console.log(key, value)
     }
-
 };
 
-export { createFocusNode, createElementNode, updateFocusNode, updateElementNode };
+const createTransitionEdge = (transitionData, destination) => {
+    return {
+        data: {
+            id: uuid(),
+            source: transitionData.originElement.parent,
+            target: destination.parent,
+            focus: transitionData.focus,
+            preRequisites: [...transitionData.preRequisites.map(preReq => preReq.parent)]
+        }
+    };
+}
+
+const updateTransitionEdge = (transitionElement, transitionData) => {
+    transitionElement.data().source = transitionData.originElement.parent;
+    transitionElement.data().target = transitionData.destinationElements[0].parent;
+    transitionElement.data().preRequisites = [...transitionData.preRequisites.map(preReq => preReq.parent)];
+    transitionElement.data().focus = transitionData.focus;
+};
+
+export {
+    createFocusNode,
+    createElementNode,
+    updateFocusNode,
+    updateElementNode,
+    createTransitionEdge,
+    updateTransitionEdge
+};

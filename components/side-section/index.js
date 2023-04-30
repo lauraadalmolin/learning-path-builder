@@ -8,7 +8,7 @@ import FORM_TYPE from '../../constants/form-type.json';
 import styles from './style.module.css';
 import { useEffect, useState } from 'react';
 
-const SideSection = ({ formType, showForm, selectedObj, lPathData, elementSubmitHandler, elementCancelHandler, transitionSubmitHandler, transitionCancelHandler }) => {
+const SideSection = ({ formType, showForm, selectedObj, lPathData, elementSubmitHandler, elementCancelHandler, elementDeleteHandler, transitionSubmitHandler, transitionCancelHandler, transitionDeleteHandler }) => {
 
   const [formData, setFormData] = useState();
 
@@ -26,7 +26,6 @@ const SideSection = ({ formType, showForm, selectedObj, lPathData, elementSubmit
     lPathData['graph'][typeMap.get(formType)]
       .forEach(element => {
         if (element.data.id === selectedObj) {
-          console.log(element, '--')
           setFormData(element);
         }
       });
@@ -52,8 +51,8 @@ const SideSection = ({ formType, showForm, selectedObj, lPathData, elementSubmit
       </div>
       <div className={styles.spacer}></div>
       <div className={styles.section}>
-        {formType === FORM_TYPE.Element && <ElementForm saveHandler={elementSubmitHandler} cancelHandler={elementCancelHandler} formData={formData}/> }
-        {formType === FORM_TYPE.Transition && <TransitionForm saveHandler={transitionSubmitHandler} cancelHandler={transitionCancelHandler} formData={formData} lPathData={lPathData}/> }
+        {formType === FORM_TYPE.Element && <ElementForm saveHandler={elementSubmitHandler} cancelHandler={elementCancelHandler} deleteHandler={elementDeleteHandler} formData={formData}/> }
+        {formType === FORM_TYPE.Transition && <TransitionForm saveHandler={transitionSubmitHandler} cancelHandler={transitionCancelHandler} deleteHandler={transitionDeleteHandler} formData={formData} lPathData={lPathData}/> }
       </div>
     </div>
   );

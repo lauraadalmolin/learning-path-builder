@@ -14,7 +14,7 @@ const DEFAULT_STATE = {
   id: { value: null, isValid: true }
 };
 
-const ElementForm = ({ saveHandler, cancelHandler, formData }) => {
+const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) => {
   const [inputs, setInputs] = useState(DEFAULT_STATE);
 
   useEffect(() => {
@@ -114,7 +114,7 @@ const ElementForm = ({ saveHandler, cancelHandler, formData }) => {
     <div>
       <div className={styles.headerContainer}>
         <SectionHeader>Criar Elemento</SectionHeader>
-        { inputs.id.value !== null && <Button type='delete' icon='MdDelete'>
+        { inputs.id.value !== null && <Button onClickHandler={() => deleteHandler(inputs.id.value)} type='delete' icon='MdDelete'>
           Excluir elemento
         </Button> }
       </div>

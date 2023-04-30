@@ -10,11 +10,11 @@
           "description": "cadeira obrigatória",
           "link": "",
           "parent": "banana",
-          "focus": "100"
+          "focus": "25"
         },
         "position": {
-          "x": 82.83057850511584,
-          "y": -55.988692143009835
+          "x": 69.40925614327875,
+          "y": -427.3119441538362
         },
         "group": "nodes",
         "removed": false,
@@ -28,11 +28,11 @@
       {
         "data": {
           "id": "banana",
-          "title": "Foco: 100"
+          "title": "Foco: 25"
         },
         "position": {
-          "x": 82.83057850511585,
-          "y": -55.98869214300984
+          "x": 69.40925614327875,
+          "y": -427.3119441538362
         },
         "group": "nodes",
         "removed": false,
@@ -53,8 +53,8 @@
           "link": ""
         },
         "position": {
-          "x": 86.49358473253038,
-          "y": 127.10719688808229
+          "x": 55.17716588824378,
+          "y": -51.843767936412306
         },
         "group": "nodes",
         "removed": false,
@@ -71,8 +71,8 @@
           "title": "Foco: 20"
         },
         "position": {
-          "x": 86.4935847325304,
-          "y": 127.10719688808229
+          "x": 55.177165888243785,
+          "y": -51.843767936412306
         },
         "group": "nodes",
         "removed": false,
@@ -93,8 +93,8 @@
           "focus": "9"
         },
         "position": {
-          "x": -143.30892364499243,
-          "y": -59.91028135191252
+          "x": -185.8097777908099,
+          "y": -144.91198964354749
         },
         "group": "nodes",
         "removed": false,
@@ -111,8 +111,8 @@
           "title": "Foco: 9"
         },
         "position": {
-          "x": -143.30892364499243,
-          "y": -59.910281351912516
+          "x": -185.8097777908099,
+          "y": -144.91198964354749
         },
         "group": "nodes",
         "removed": false,
@@ -129,8 +129,8 @@
           "title": "Foco: 2"
         },
         "position": {
-          "x": 313.73659261533896,
-          "y": 58.91510030246366
+          "x": 70.58302584508543,
+          "y": -651.8459048223972
         },
         "group": "nodes",
         "removed": false,
@@ -151,48 +151,8 @@
           "focus": "2"
         },
         "position": {
-          "x": 313.73659261533896,
-          "y": 58.91510030246365
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "pannable": false,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "7fa4b848-c07f-ca79-b438-46d7509b558d",
-          "title": "Foco: 7"
-        },
-        "position": {
-          "x": 301.0773192285545,
-          "y": -235.3354043391269
-        },
-        "group": "nodes",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "pannable": false,
-        "classes": ""
-      },
-      {
-        "data": {
-          "id": "b5229877-e3e7-a7ba-461c-75ac1a2ba447",
-          "title": "Matemática Discreta II",
-          "description": "uma cadeira obrigatória",
-          "link": "",
-          "parent": "7fa4b848-c07f-ca79-b438-46d7509b558d",
-          "focus": "7"
-        },
-        "position": {
-          "x": 301.0773192285545,
-          "y": -235.3354043391269
+          "x": 70.58302584508543,
+          "y": -651.8459048223972
         },
         "group": "nodes",
         "removed": false,
@@ -207,9 +167,55 @@
     "edges": [
       {
         "data": {
+          "id": "62ab840d-6f3b-e93b-6a45-eefb1d1f672d",
+          "source": "banana",
+          "target": "2c55178c-f828-ddee-4670-21631a35c839",
+          "focus": "90",
+          "preRequisites": []
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
           "id": "ad",
           "source": "banana",
-          "target": "e"
+          "target": "e",
+          "focus": "120",
+          "preRequisites": [
+            "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6"
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "c4417310-f40c-01cb-3852-6fbe6301ca45",
+          "source": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
+          "target": "banana",
+          "focus": "9",
+          "preRequisites": []
         },
         "position": {
           "x": 0,
