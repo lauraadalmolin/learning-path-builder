@@ -100,17 +100,19 @@ const Main = () => {
           </Button>
         </div>
         {lPaths.length === 0 && <div className={styles.messageContainer}>{strings.noPathsFound}</div>}
-        {lPaths.map((el) => (
-          <TableRow
-            key={el.id}
-            numberOfElements={el.numberOfElements}
-            numberOfTransitions={el.numberOfTransitions}
-            lPath={el}
-            deleteHandler={showModal}
-            downloadHandler={() => downloadLPath(el.id)}
-            navigateHandler={() => navigateHandler(el.id)}
-          />
-        ))}
+        <div className={styles.listContainer}>
+          {lPaths.map((el) => (
+            <TableRow
+              key={el.id}
+              numberOfElements={el.numberOfElements}
+              numberOfTransitions={el.numberOfTransitions}
+              lPath={el}
+              deleteHandler={showModal}
+              downloadHandler={() => downloadLPath(el.id)}
+              navigateHandler={() => navigateHandler(el.id)}
+            />
+          ))}
+        </div>
       </div>
       <a id="downloadAnchorElem" className='hidden-anchor' />
     </div>

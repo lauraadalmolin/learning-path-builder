@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <title>LPath Builder</title>
+        <title>Kerberos</title>
       </Head>
       <body>
         <Main />

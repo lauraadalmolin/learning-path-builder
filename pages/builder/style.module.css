@@ -1,10 +1,11 @@
 .externalContainer {
   background-color: white;
+  overflow-y: hidden;
 }
 
 .rowContainer {
   display: flex;
-  height: calc(100vh - 3.4rem);
+  height: calc(100vh - 3rem);
 }
 
 .container {

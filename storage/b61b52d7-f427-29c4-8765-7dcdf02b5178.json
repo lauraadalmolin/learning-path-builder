@@ -9,8 +9,8 @@
           "title": "Foco: 3"
         },
         "position": {
-          "x": 194.00141103760993,
-          "y": 112.00018013246086
+          "x": 194.91322012862838,
+          "y": 86.46952558394216
         },
         "group": "nodes",
         "removed": false,
@@ -31,8 +31,8 @@
           "focus": "3"
         },
         "position": {
-          "x": 194.00141103760993,
-          "y": 112.00018013246084
+          "x": 194.91322012862838,
+          "y": 86.46952558394216
         },
         "group": "nodes",
         "removed": false,
@@ -49,8 +49,8 @@
           "title": "Foco: 3"
         },
         "position": {
-          "x": 324.00336247260236,
-          "y": 290.0028520972967
+          "x": 244.6563187104893,
+          "y": 284.6150898665359
         },
         "group": "nodes",
         "removed": false,
@@ -71,8 +71,88 @@
           "focus": "3"
         },
         "position": {
-          "x": 324.00336247260236,
-          "y": 290.0028520972967
+          "x": 244.6563187104893,
+          "y": 284.6150898665359
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "ece63809-2e6e-d149-938f-dcde2b0e13aa",
+          "title": "Foco: 2354"
+        },
+        "position": {
+          "x": 373.6650975925586,
+          "y": 141.84999627787968
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "97178902-4ba3-745f-1e48-2da7123db699",
+          "title": "Algoritmos II",
+          "description": "disciplina louca",
+          "link": "nem sei",
+          "parent": "ece63809-2e6e-d149-938f-dcde2b0e13aa",
+          "focus": "2354"
+        },
+        "position": {
+          "x": 373.6650975925586,
+          "y": 141.84999627787968
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "c102449f-7feb-c3d5-1ff2-87e2977d16c7",
+          "title": "Foco: 23"
+        },
+        "position": {
+          "x": 379.76955003769666,
+          "y": -2.940037598520366
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "04e133d1-5b4e-c15a-bbe3-4b1a1d756973",
+          "title": "Algoritmos I",
+          "description": "vamo la",
+          "link": "",
+          "parent": "c102449f-7feb-c3d5-1ff2-87e2977d16c7",
+          "focus": "23"
+        },
+        "position": {
+          "x": 379.76955003769666,
+          "y": -2.940037598520365
         },
         "group": "nodes",
         "removed": false,
@@ -92,6 +172,29 @@
           "target": "597e288c-60ed-f667-cef1-67bbf8011f75",
           "focus": "3",
           "preRequisites": []
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "c34e59c5-f1f9-bca3-1c84-449a67ef5359",
+          "source": "c102449f-7feb-c3d5-1ff2-87e2977d16c7",
+          "target": "ece63809-2e6e-d149-938f-dcde2b0e13aa",
+          "focus": "23",
+          "preRequisites": [
+            "597e288c-60ed-f667-cef1-67bbf8011f75"
+          ]
         },
         "position": {
           "x": 0,

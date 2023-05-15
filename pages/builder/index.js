@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
+import { debounce } from 'lodash';
 import 'react-toastify/dist/ReactToastify.css';
 
 import cytoscape from 'cytoscape';
@@ -17,6 +18,7 @@ import FORM_TYPE from '../../constants/form-type.json';
 
 import strings from '../../constants/strings.json';
 import styles from './style.module.css';
+import LoadingSpinner from '../../components/loading-spinner';
 
 const TOAST_CONFIG = { position: toast.POSITION.BOTTOM_LEFT };
 
@@ -66,13 +68,15 @@ const Builder = () => {
       }
     }
     
-    // tap on the background
-    // cy.on('tap', (event) => {
-    //   const targetElement = event.target;
-    //   if (targetElement === cy) {
-    //     setSelectedElement(null);
-    //   }
-    // });
+    // save after repositioning
+    cy.on('dragfreeon', () => {
+      debouncedSave();
+    });
+
+    const debouncedSave = debounce(async () => {
+      await savePath();
+      console.log("saved");
+    }, 2000);
 
     const handleSelection = (targetId, formType) => {
       const currSelectedId = selectedElementStateRef.current;
@@ -178,6 +182,12 @@ const Builder = () => {
     loadLearningPathData(learningPathId);  
   }, [router.query]);
 
+  const selectRecentlyCreatedObj = (objId, formType) => {
+    setFormType(formType);
+    setSelectedElement(objId);
+    updateElementColor(objId, true);
+  }
+
   const elementSubmitHandlerFn = async (elementData) => {
     let elementNode, focusNode;
     if (elementData.id) {
@@ -196,6 +206,7 @@ const Builder = () => {
     }
     cy.add(focusNode);
     cy.add(elementNode);
+    selectRecentlyCreatedObj(elementNode.data.id, FORM_TYPE.Element);
     await savePath();
   }
 
@@ -228,6 +239,7 @@ const Builder = () => {
       for (const destination of transitionData.destinationElements) {
         const transitionEdge = createTransitionEdge(transitionData, destination);
         cy.add(transitionEdge);
+        selectRecentlyCreatedObj(transitionEdge.data.id, FORM_TYPE.Transition);
       }
     }
 
@@ -254,7 +266,7 @@ const Builder = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingSpinner></LoadingSpinner>;
   } else {
     return <div className={styles.externalContainer}>
       <Navbar learningPathData={lPathData} showOptions={true} saveNameHandler={saveName} savePathHandler={savePath} downloadPathHandler={downloadLPath}/>

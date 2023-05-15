@@ -56,6 +56,7 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
   }
 
   const formatElements = (elements) => {
+    if (!elements) return [];
     return elements.filter(element => element.data.parent)
       .map(element => {
         return { name: element.data.title, id: element.data.id, parent: element.data.parent }

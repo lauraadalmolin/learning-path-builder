@@ -14,7 +14,7 @@
 .input {
   border: none;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-top: 6px;
   outline: none;
   color: var(--gray-500);

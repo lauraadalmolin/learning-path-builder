@@ -124,17 +124,17 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
           Excluir elemento
         </Button> }
       </div>
-      <Input label='Nome do conteúdo*' inputConfig={{
+      <Input label='Nome do conteúdo' inputConfig={{
         placeholder: 'Algoritmos e estruturas de dados',
         value: inputs.title.value,
         onChange: inputChangedHandler.bind(this, 'title'),
       }}></Input>
-      <Input label='Descrição*' inputConfig={{
+      <Input label='Descrição' inputConfig={{
         placeholder: 'Disciplina do primeiro ano de ECOMP',
         value: inputs.description.value,
         onChange: inputChangedHandler.bind(this, 'description'),
       }}></Input>
-      <Input label='Foco*' inputConfig={{
+      <Input label='Foco' inputConfig={{
         placeholder: 'Insira a intensidade de foco necessária',
         value: inputs.focus.value,
         onChange: inputChangedHandler.bind(this, 'focus'),

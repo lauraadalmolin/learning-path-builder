@@ -6,13 +6,11 @@
 
 .btn {
   color: white;
- 
   box-shadow: none;
-  
   border: none;
   cursor: pointer;
   margin-right: 6px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .small {

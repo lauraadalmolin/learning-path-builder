@@ -19,3 +19,7 @@
   border-radius: 12px;
   color: var(--blue-900);
 }
+
+.listContainer {
+  overflow-y: auto;
+}

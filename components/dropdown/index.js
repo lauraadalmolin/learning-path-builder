@@ -10,9 +10,8 @@ const Dropdown = ({ label, placeholder, state, singleSelect }) => {
             "fontSize": "12px",
             "borderRadius": "6px",
             "borderColor": "white",
-            "padding": "12px 0 12px",
+            "padding": "10px 0 10px",
             "marginTop": "6px",
-            "marginBottom": "16px",
             "cursor": "pointer"
         },
         searchBox: {
@@ -25,7 +24,7 @@ const Dropdown = ({ label, placeholder, state, singleSelect }) => {
             "border": "2px solid white",
             "backgroundColor": "rgba(240, 240, 240, 0.473)",
             "boxShadow": "2px 2px 3px gray",
-            "marginTop": "6px"
+            "marginTop": "8px"
         },
         option: {
             "backgroundColor": "white",
@@ -34,7 +33,7 @@ const Dropdown = ({ label, placeholder, state, singleSelect }) => {
         chips: { 
             "backgroundColor": "#2dc5da",
             "fontSize": "12px",
-            "margin": "0 6px 0 0", 
+            "margin": "1px 8px 1px 0", 
             "color": "white"
         },
     }
@@ -47,7 +46,7 @@ const Dropdown = ({ label, placeholder, state, singleSelect }) => {
         state.selectedValues = [...selectedList];
     }
 
-    return <div>
+    return <div className={styles.container}>
         <span className={styles.label}>{label}</span>
         <Multiselect
             singleSelect={singleSelect}
@@ -59,8 +58,7 @@ const Dropdown = ({ label, placeholder, state, singleSelect }) => {
             closeIcon="cancel"
             showArrow={true}
             placeholder={placeholder}
-            // customArrow={"A"}
-            // showCheckbox={true}
+            emptyRecordMsg="Nenhuma opção disponível"
             style={style}/>
     </div>
 };

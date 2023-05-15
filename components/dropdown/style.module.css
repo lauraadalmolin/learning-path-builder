@@ -3,3 +3,10 @@
     font-weight: 600;
     font-size: 0.8rem;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 16px;
+    flex: 1;
+}
