@@ -11,7 +11,7 @@ import SideSection from '../../components/side-section';
 import learningPathService from '../../service/learning-path.service';
 
 import { createElementNode, createFocusNode, createTransitionEdge, updateElementNode, updateFocusNode, updateTransitionEdge } from '../../utils/graph-handler';
-import { downloadFile } from '../../utils/download-file';
+import { downloadFile, downloadImageFile } from '../../utils/download-file';
 
 import { STYLE, COLORS } from '../../constants/graph-style';
 import FORM_TYPE from '../../constants/form-type.json';
@@ -28,6 +28,7 @@ const Builder = () => {
   const [loading, setLoading] = useState(true);
   const [lPathData, setLPathData] = useState();
   const [selectedElement, setSelectedElement] = useState();
+  const [lastPosition, setLastPosition] = useState({x: 100, y: 100});
   
   const router = useRouter();
   const container = useRef();
@@ -52,9 +53,10 @@ const Builder = () => {
 
     const updateElementColor = (id, isHighlight) => {
       const element = cy.getElementById(id);
+      console.log(element);
 
       if (element.isEdge()) {
-        const color = isHighlight ? COLORS.PrimaryHighlight : COLORS.Edge;
+        const color = isHighlight ? COLORS.PrimaryHighlight : element.data().preRequisites?.length > 0 ? COLORS.PreRequisiteEdge : COLORS.Edge;
         element.style('line-color', color);
         element.style('target-arrow-color', color);
       } else {
@@ -65,11 +67,24 @@ const Builder = () => {
         const parentElement = element.parent();
         parentElement.style('background-color', color);
         parentElement.style('text-background-color', labelColor);
+        parentElement.style('border-color', color);
+
       }
     }
+
+    // tap on the background
+    cy.on('tap', (event) => {
+      const targetElement = event.target;
+      if (event.position) setLastPosition(event.position);
+      if (targetElement === cy) {
+        updateElementColor(selectedElementStateRef.current, false);
+        setSelectedElement(null);
+      }
+    });
     
     // save after repositioning
-    cy.on('dragfreeon', () => {
+    cy.on('dragfreeon', (event) => {
+      if (event.position) setLastPosition(event.position);
       debouncedSave();
     });
 
@@ -111,17 +126,18 @@ const Builder = () => {
     const element = cy.getElementById(id);
 
     if (element.isEdge()) {
-      const color = isHighlight ? COLORS.PrimaryHighlight : COLORS.Edge;
+      const color = isHighlight ? COLORS.PrimaryHighlight : element.data().preRequisites.length > 0 ? COLORS.PreRequisiteEdge : COLORS.Edge;
       element.style('line-color', color);
       element.style('target-arrow-color', color);
     } else {
       const color = isHighlight ? COLORS.PrimaryHighlight : COLORS.Primary
       const labelColor = isHighlight ? COLORS.SecondaryHighlight : COLORS.Secondary
       element.style('background-color', color);
-
+      
       const parentElement = element.parent();
       parentElement.style('background-color', color);
       parentElement.style('text-background-color', labelColor);
+      parentElement.style('border-color', color);
     }
   }
 
@@ -201,8 +217,8 @@ const Builder = () => {
       const graphState = cy.elements().remove();
       graphState.restore();
     } else {
-      focusNode = createFocusNode(elementData.focus);
-      elementNode = createElementNode(elementData, focusNode.data.id);
+      focusNode = createFocusNode(elementData.focus, lastPosition);
+      elementNode = createElementNode(elementData, focusNode.data.id, lastPosition);
     }
     cy.add(focusNode);
     cy.add(elementNode);
@@ -265,11 +281,16 @@ const Builder = () => {
     downloadFile(document, updatedLPath);
   }
 
+  const downloadImage = () => {
+    const imageBlob = cy?.png({ output: 'base64', full: true });
+    downloadImageFile(document, imageBlob, lPathData.name);
+  }
+
   if (loading) {
     return <LoadingSpinner></LoadingSpinner>;
   } else {
     return <div className={styles.externalContainer}>
-      <Navbar learningPathData={lPathData} showOptions={true} saveNameHandler={saveName} savePathHandler={savePath} downloadPathHandler={downloadLPath}/>
+      <Navbar learningPathData={lPathData} showOptions={true} saveNameHandler={saveName} savePathHandler={savePath} downloadPathHandler={downloadLPath} downloadImageHandler={downloadImage}/>
       <div className={styles.rowContainer}>
         <div ref={container} className={styles.container}></div>
         <SideSection 

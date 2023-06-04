@@ -1,5 +1,1644 @@
 {
   "id": "50583857-e357-10fb-afb0-064da4eec32f",
-  "name": "Nova Rota",
-  "graph": {}
+  "name": "Front End",
+  "graph": {
+    "nodes": [
+      {
+        "data": {
+          "id": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "title": "Foco: 15"
+        },
+        "position": {
+          "x": 121.00313881107365,
+          "y": 148.99372237785266
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "1a872393-10c8-5181-8758-989b1537e55a",
+          "title": "Internet",
+          "description": "Fundamentos sobre o funcionamento da internet",
+          "link": "",
+          "parent": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "focus": "15"
+        },
+        "position": {
+          "x": 121.00313881107365,
+          "y": 148.99372237785266
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "50428ff1-e273-5c4d-d630-2db642f23d66",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": -55,
+          "y": 100
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "ba307175-d70d-d5a0-602e-d5eb68a4e8e4",
+          "title": "Protocolo HTTP",
+          "description": "O que é o protocolo HTTP? Como ele funciona?",
+          "link": "",
+          "parent": "50428ff1-e273-5c4d-d630-2db642f23d66",
+          "focus": "3"
+        },
+        "position": {
+          "x": -55,
+          "y": 100
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "2bcdca23-3e88-1459-e79b-8977e29c02e8",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": -68,
+          "y": 209
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "a2a9b9e3-467a-8cdf-e3b9-6d6f8ab60541",
+          "title": "Navegadores",
+          "description": "O que são navegadores e como eles funcionam?",
+          "link": "",
+          "parent": "2bcdca23-3e88-1459-e79b-8977e29c02e8",
+          "focus": "3"
+        },
+        "position": {
+          "x": -68,
+          "y": 209
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "70053bf5-1d24-3c66-148e-54df9be949df",
+          "title": "Foco: 5"
+        },
+        "position": {
+          "x": -81.13325972986617,
+          "y": 425.4830463733268
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "bd38792d-8ad6-7e6d-fd77-d35b29a0c82d",
+          "title": "HTML",
+          "description": "Tópicos fundamentais em HTML",
+          "link": "",
+          "parent": "70053bf5-1d24-3c66-148e-54df9be949df",
+          "focus": "5"
+        },
+        "position": {
+          "x": -81.13325972986617,
+          "y": 425.4830463733268
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "701562fd-3626-b81b-1143-ac97ef0b3163",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": 293.99999999999994,
+          "y": 23.123874853842025
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "b06ad440-5a3b-c9f4-bc9c-460d40c4c817",
+          "title": "DNS",
+          "description": "O que é DNS e como ele funciona?",
+          "link": "",
+          "parent": "701562fd-3626-b81b-1143-ac97ef0b3163",
+          "focus": "3"
+        },
+        "position": {
+          "x": 293.99999999999994,
+          "y": 23.123874853842025
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "2f2cc627-eb94-8fa9-d9cb-4aecc83b9fa0",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": 304,
+          "y": 133
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "744a7d0b-bcd9-5d9f-7fc2-30cb56a02382",
+          "title": "Domain Name",
+          "description": "O que é Domain Name?",
+          "link": "",
+          "parent": "2f2cc627-eb94-8fa9-d9cb-4aecc83b9fa0",
+          "focus": "3"
+        },
+        "position": {
+          "x": 304,
+          "y": 133
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "013d1b9f-12c2-5186-fa4d-f6e932f63e47",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": 297,
+          "y": 248
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "540c5a2d-59ac-36f4-fe5a-86ebd7f9327a",
+          "title": "Hosting",
+          "description": "O que é hosting?",
+          "link": "",
+          "parent": "013d1b9f-12c2-5186-fa4d-f6e932f63e47",
+          "focus": "3"
+        },
+        "position": {
+          "x": 297,
+          "y": 248
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "8a580d12-af7b-6f97-cff1-e2fdcb716a6f",
+          "title": "Foco: 2"
+        },
+        "position": {
+          "x": -387.07661930810184,
+          "y": 440.8578606153492
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "6d601b16-a506-d705-a6fe-ffd02b0452d8",
+          "title": "Sintaxe básica de HTML",
+          "description": "Aprender sobre as principais tags e a estrutura do HTML",
+          "link": "",
+          "parent": "8a580d12-af7b-6f97-cff1-e2fdcb716a6f",
+          "focus": "2"
+        },
+        "position": {
+          "x": -387.07661930810184,
+          "y": 440.8578606153492
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "5ba87420-c728-194c-f2bc-d0e0b3949089",
+          "title": "Foco: 1"
+        },
+        "position": {
+          "x": -393.32279961024915,
+          "y": 569.2591956985076
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "fd25249e-7a31-4882-d244-de12d49a7aa5",
+          "title": "Convenções e melhores práticas em HTML",
+          "description": "Aprender as melhores práticas e convenções em HTML",
+          "link": "",
+          "parent": "5ba87420-c728-194c-f2bc-d0e0b3949089",
+          "focus": "1"
+        },
+        "position": {
+          "x": -393.32279961024915,
+          "y": 569.2591956985076
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "0327d5e8-bc1e-395c-5f74-5bb2f55df1d4",
+          "title": "Foco: 2"
+        },
+        "position": {
+          "x": -394.86284094518817,
+          "y": 703.1804584911306
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "f92f4f7e-f318-ee8d-491b-daa3f67df513",
+          "title": "Forms e validações",
+          "description": "Como implementar forms e validações em HTML",
+          "link": "",
+          "parent": "0327d5e8-bc1e-395c-5f74-5bb2f55df1d4",
+          "focus": "2"
+        },
+        "position": {
+          "x": -394.86284094518817,
+          "y": 703.1804584911306
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "36635682-8037-2677-0ca5-a4fc746a0c8c",
+          "title": "Foco: 5"
+        },
+        "position": {
+          "x": -9.818258068714083,
+          "y": 566.6035777071033
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "6ce89ae9-4bc0-901b-0139-8edbe33ce9d6",
+          "title": "CSS ",
+          "description": "Conceitos fundamentais de CSS",
+          "link": "",
+          "parent": "36635682-8037-2677-0ca5-a4fc746a0c8c",
+          "focus": "5"
+        },
+        "position": {
+          "x": -9.818258068714083,
+          "y": 566.6035777071033
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "e8665146-4b43-16dc-b87f-6c049e5f0d56",
+          "title": "Foco: 2"
+        },
+        "position": {
+          "x": 180.79469634324744,
+          "y": 512.1060495629756
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "c33a1573-29bc-cfb3-67f4-0da34c3a57d8",
+          "title": "Desenvolver layouts",
+          "description": "Floats, positioning, display, box model, css grid, flex box...",
+          "link": "",
+          "parent": "e8665146-4b43-16dc-b87f-6c049e5f0d56",
+          "focus": "2"
+        },
+        "position": {
+          "x": 180.79469634324744,
+          "y": 512.1060495629756
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "9bf66793-633e-c82e-e082-01145224b69f",
+          "title": "Foco: 2"
+        },
+        "position": {
+          "x": 102.46049236897014,
+          "y": 399.92108346896185
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "eb27aa16-76bd-1ec2-fa4b-99aefbf6d70d",
+          "title": "Básico de CSS",
+          "description": "Classes, ids, seletores, prioridade de seletores, etc.",
+          "link": "",
+          "parent": "9bf66793-633e-c82e-e082-01145224b69f",
+          "focus": "2"
+        },
+        "position": {
+          "x": 102.46049236897014,
+          "y": 399.92108346896185
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "004830ce-d7c6-268a-d08e-badd75afa3e4",
+          "title": "Foco: 1"
+        },
+        "position": {
+          "x": 167.63176366554674,
+          "y": 645.1404257218745
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "dfc0ff9b-ad02-a7b4-356e-dc8845bd555d",
+          "title": "Design responsivo",
+          "description": "Media queries e etc",
+          "link": "",
+          "parent": "004830ce-d7c6-268a-d08e-badd75afa3e4",
+          "focus": "1"
+        },
+        "position": {
+          "x": 167.63176366554674,
+          "y": 645.1404257218745
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "title": "Foco: 10"
+        },
+        "position": {
+          "x": 440.06820279708506,
+          "y": 513.0145561872307
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "f770fbc6-8b81-640b-6f73-7059bb99ff2a",
+          "title": "JavaScript",
+          "description": "Conceitos básicos de JavaScript",
+          "link": "",
+          "parent": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "focus": "10"
+        },
+        "position": {
+          "x": 440.06820279708506,
+          "y": 513.0145561872307
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "27ab7fa0-d0fe-a7f8-8b66-d32c654a596d",
+          "title": "Foco: 2"
+        },
+        "position": {
+          "x": 725.9723968708921,
+          "y": 218.84455376374652
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "c6192172-7633-54f7-c2cb-d2221c3313d4",
+          "title": "Sintaxe e blocos básicos",
+          "description": "Sintaxe básica do JS",
+          "link": "",
+          "parent": "27ab7fa0-d0fe-a7f8-8b66-d32c654a596d",
+          "focus": "2"
+        },
+        "position": {
+          "x": 725.9723968708921,
+          "y": 218.84455376374652
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "293abb51-b5c7-5af2-a93a-0433f534421f",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": 730.4817130341742,
+          "y": 356.8411124368404
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "8c91d3d9-33c5-4596-4b2a-8c00e275f869",
+          "title": "Manipulação do DOM",
+          "description": "Aprenda sobre como manipular elementos do HTML dinamicamente",
+          "link": "",
+          "parent": "293abb51-b5c7-5af2-a93a-0433f534421f",
+          "focus": "3"
+        },
+        "position": {
+          "x": 730.4817130341742,
+          "y": 356.8411124368404
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "5b266598-97dd-f029-bf02-67d311bfc990",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": 724.7323319681274,
+          "y": 486.005647333157
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "11f86c44-be5a-9fb8-509d-0aa5ebd75ab8",
+          "title": "Fetch API e Ajax",
+          "description": "Aprender sobre essas bibliotecas",
+          "link": "",
+          "parent": "5b266598-97dd-f029-bf02-67d311bfc990",
+          "focus": "3"
+        },
+        "position": {
+          "x": 724.7323319681274,
+          "y": 486.005647333157
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "f5c6719f-4616-0124-b002-a42fb689fbed",
+          "title": "Pré-processadores de CSS",
+          "description": "Aprenda mais sobre os pre-processadores de CSS",
+          "link": "",
+          "parent": "3f6a6cf2-9356-b491-bb1f-5031c1a86be3",
+          "focus": "5"
+        },
+        "position": {
+          "x": 18.076117421925268,
+          "y": 776.2617179060467
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "495d2075-cafb-27cf-c694-91ef613135a7",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": 730.5079775641345,
+          "y": 604.4063820513076
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "ca855cdb-1bfa-2cb2-f6e4-afee34107c2f",
+          "title": "ES6+ e JavaScript modular",
+          "description": "Aprender sobre a versão mais recente do EcmaScript",
+          "link": "",
+          "parent": "495d2075-cafb-27cf-c694-91ef613135a7",
+          "focus": "3"
+        },
+        "position": {
+          "x": 730.5079775641345,
+          "y": 604.4063820513076
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "b416d535-ccc0-39c4-eb59-1471abfe3a5c",
+          "title": "Foco: 5"
+        },
+        "position": {
+          "x": 805.5913703122299,
+          "y": 765.1618511401787
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "784640e1-f634-cb2b-6afa-43a723518a39",
+          "title": "Conceitos chave: event bubbling, scope, prototype, shadow DOM, strict, hoisting",
+          "description": "Aprender sobre esses importantes conceitos do JavaScript",
+          "link": "",
+          "parent": "b416d535-ccc0-39c4-eb59-1471abfe3a5c",
+          "focus": "5"
+        },
+        "position": {
+          "x": 805.5913703122299,
+          "y": 765.1618511401787
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "3f6a6cf2-9356-b491-bb1f-5031c1a86be3",
+          "title": "Foco: 5"
+        },
+        "position": {
+          "x": 18.07611742192526,
+          "y": 776.2617179060467
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "1e556619-718b-3cb5-bc4a-1059bec6cfd1",
+          "title": "Foco: 2"
+        },
+        "position": {
+          "x": -195.27802837321715,
+          "y": 682.9574325863953
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "f6c0c9a8-8aea-cb2f-fb23-a3e894251d17",
+          "title": "BEM",
+          "description": "Block Element Modifier",
+          "link": "",
+          "parent": "1e556619-718b-3cb5-bc4a-1059bec6cfd1",
+          "focus": "2"
+        },
+        "position": {
+          "x": -195.27802837321715,
+          "y": 682.9574325863953
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "af5827f4-f373-96d1-3c04-bd46e358b18e",
+          "title": "Foco: 3"
+        },
+        "position": {
+          "x": -191.92034374484626,
+          "y": 808.7371707806927
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "fec109b8-b93a-67d3-2774-85907f8f996a",
+          "title": "Sass",
+          "description": "Syntactically Awesome Style Sheets",
+          "link": "",
+          "parent": "af5827f4-f373-96d1-3c04-bd46e358b18e",
+          "focus": "3"
+        },
+        "position": {
+          "x": -191.92034374484626,
+          "y": 808.7371707806927
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "6d6f2848-1819-259f-5960-2d9b49ef0b30",
+          "title": "Foco: 4"
+        },
+        "position": {
+          "x": 469.57417864653405,
+          "y": 304.0851174756407
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "97c880bc-28b3-d380-5884-c370f6506081",
+          "title": "Git",
+          "description": "Aprenda o básico sobre sistemas de versionamento como o Git",
+          "link": "",
+          "parent": "6d6f2848-1819-259f-5960-2d9b49ef0b30",
+          "focus": "4"
+        },
+        "position": {
+          "x": 469.57417864653405,
+          "y": 304.0851174756407
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "04c8ba54-92e6-e074-6239-a3e463ddf84d",
+          "title": "Foco: 15"
+        },
+        "position": {
+          "x": 242.04034857022094,
+          "y": 991.8263870432984
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "45386d1e-9caa-e393-0d27-cdd6196e8966",
+          "title": "React",
+          "description": "Confira a rota específica de React",
+          "link": "",
+          "parent": "04c8ba54-92e6-e074-6239-a3e463ddf84d",
+          "focus": "15"
+        },
+        "position": {
+          "x": 242.04034857022094,
+          "y": 991.8263870432984
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "74bdd0d5-1a86-3689-cf2c-6307b895fa50",
+          "title": "Foco: 1"
+        },
+        "position": {
+          "x": 446.43157351440874,
+          "y": 1012.1638678773884
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "9dd99066-565d-76db-bd9e-4064502f4d13",
+          "title": "aaa",
+          "description": "aaaa",
+          "link": "",
+          "parent": "74bdd0d5-1a86-3689-cf2c-6307b895fa50",
+          "focus": "1"
+        },
+        "position": {
+          "x": 446.43157351440874,
+          "y": 1012.1638678773884
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "0e096b02-2ebe-7c99-d539-05e813bb221f",
+          "title": "Foco: 1"
+        },
+        "position": {
+          "x": 640.5637580819209,
+          "y": 966.873902525503
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "f8631522-4203-c4a8-0239-356cbe81a56c",
+          "title": "bbbb",
+          "description": "aa",
+          "link": "",
+          "parent": "0e096b02-2ebe-7c99-d539-05e813bb221f",
+          "focus": "1"
+        },
+        "position": {
+          "x": 640.5637580819209,
+          "y": 966.873902525503
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "5a2c711d-6a1b-2074-9e44-84d3e7a516e2",
+          "source": "3f6a6cf2-9356-b491-bb1f-5031c1a86be3",
+          "target": "04c8ba54-92e6-e074-6239-a3e463ddf84d",
+          "focus": "5",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "e129a8cb-09af-c5c0-575f-936f05bb8549",
+          "source": "3f6a6cf2-9356-b491-bb1f-5031c1a86be3",
+          "target": "af5827f4-f373-96d1-3c04-bd46e358b18e",
+          "focus": "3",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "219326c1-9633-ff8e-652e-e04cffe0ae26",
+          "source": "3f6a6cf2-9356-b491-bb1f-5031c1a86be3",
+          "target": "1e556619-718b-3cb5-bc4a-1059bec6cfd1",
+          "focus": "2",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "7226920b-eccb-f713-f5ad-823e041f21af",
+          "source": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "target": "04c8ba54-92e6-e074-6239-a3e463ddf84d",
+          "focus": "10",
+          "preRequisites": [
+            "6d6f2848-1819-259f-5960-2d9b49ef0b30",
+            "27ab7fa0-d0fe-a7f8-8b66-d32c654a596d",
+            "293abb51-b5c7-5af2-a93a-0433f534421f",
+            "5b266598-97dd-f029-bf02-67d311bfc990",
+            "495d2075-cafb-27cf-c694-91ef613135a7",
+            "b416d535-ccc0-39c4-eb59-1471abfe3a5c"
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "de81ef88-d114-d866-9a6f-edbf31c08d13",
+          "source": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "target": "495d2075-cafb-27cf-c694-91ef613135a7",
+          "focus": "2",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "b6f74c1d-5909-84c4-80e9-0d7e290a8647",
+          "source": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "target": "5b266598-97dd-f029-bf02-67d311bfc990",
+          "focus": "3",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "b2e0cfe3-0a6d-b53b-d020-5fe08aaa5e77",
+          "source": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "target": "b416d535-ccc0-39c4-eb59-1471abfe3a5c",
+          "focus": "5",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "5b39775e-eee4-9acd-1827-50524306a680",
+          "source": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "target": "293abb51-b5c7-5af2-a93a-0433f534421f",
+          "focus": "1",
+          "preRequisites": [
+            "e10d7f06-b154-3e5d-b62c-fc763e324983"
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "4f089f24-7703-faf2-d2fe-dfb251b7edf5",
+          "source": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "target": "27ab7fa0-d0fe-a7f8-8b66-d32c654a596d",
+          "focus": "1",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "5b0e8f21-9fe7-ce6e-5b16-08026def5b23",
+          "source": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "target": "6d6f2848-1819-259f-5960-2d9b49ef0b30",
+          "focus": "4",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "8c3c958d-c573-9ee6-5e4f-f9a863fa1ed0",
+          "source": "36635682-8037-2677-0ca5-a4fc746a0c8c",
+          "target": "3f6a6cf2-9356-b491-bb1f-5031c1a86be3",
+          "focus": "5",
+          "preRequisites": [
+            "9bf66793-633e-c82e-e082-01145224b69f",
+            "e8665146-4b43-16dc-b87f-6c049e5f0d56",
+            "004830ce-d7c6-268a-d08e-badd75afa3e4"
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "0f7a154e-d185-873d-52eb-4cbdd54de6e2",
+          "source": "36635682-8037-2677-0ca5-a4fc746a0c8c",
+          "target": "9bf66793-633e-c82e-e082-01145224b69f",
+          "focus": "2",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "cbf00a20-8732-3ebb-eca3-ec43a16cac14",
+          "source": "36635682-8037-2677-0ca5-a4fc746a0c8c",
+          "target": "e8665146-4b43-16dc-b87f-6c049e5f0d56",
+          "focus": "2",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "4ecdb124-39cc-8398-e31e-5c0ffd1a3c10",
+          "source": "36635682-8037-2677-0ca5-a4fc746a0c8c",
+          "target": "004830ce-d7c6-268a-d08e-badd75afa3e4",
+          "focus": "1",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "9fc453c6-d8b7-fa1a-43c8-dedf2a426ffb",
+          "source": "70053bf5-1d24-3c66-148e-54df9be949df",
+          "target": "36635682-8037-2677-0ca5-a4fc746a0c8c",
+          "focus": "5",
+          "preRequisites": [
+            "8a580d12-af7b-6f97-cff1-e2fdcb716a6f",
+            "5ba87420-c728-194c-f2bc-d0e0b3949089",
+            "0327d5e8-bc1e-395c-5f74-5bb2f55df1d4"
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "f6aa922d-ac36-6305-7bbc-e32fd45e9ffc",
+          "source": "70053bf5-1d24-3c66-148e-54df9be949df",
+          "target": "8a580d12-af7b-6f97-cff1-e2fdcb716a6f",
+          "focus": "2",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "39d02405-51f4-44c5-7379-7812119baaf2",
+          "source": "70053bf5-1d24-3c66-148e-54df9be949df",
+          "target": "0327d5e8-bc1e-395c-5f74-5bb2f55df1d4",
+          "focus": "2",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "901d2c96-c6c9-b4ad-61e6-711b31d9c808",
+          "source": "70053bf5-1d24-3c66-148e-54df9be949df",
+          "target": "5ba87420-c728-194c-f2bc-d0e0b3949089",
+          "focus": "1",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "a11d1c7c-3877-ea32-4669-db33c8f0c5d3",
+          "source": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "target": "3f47748f-f699-6bbe-b24e-50b624a3a4e7",
+          "focus": "5",
+          "preRequisites": [
+            "701562fd-3626-b81b-1143-ac97ef0b3163",
+            "50428ff1-e273-5c4d-d630-2db642f23d66",
+            "2f2cc627-eb94-8fa9-d9cb-4aecc83b9fa0",
+            "2bcdca23-3e88-1459-e79b-8977e29c02e8",
+            "013d1b9f-12c2-5186-fa4d-f6e932f63e47"
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "59823bb0-71a8-ab19-37da-77570d099d4d",
+          "source": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "target": "50428ff1-e273-5c4d-d630-2db642f23d66",
+          "focus": "3",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "d3142f9a-1dac-cc92-be40-d9180f65bdd8",
+          "source": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "target": "2bcdca23-3e88-1459-e79b-8977e29c02e8",
+          "focus": "3",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "260d2e3b-f43f-7c72-7dea-8a81497f0166",
+          "source": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "target": "70053bf5-1d24-3c66-148e-54df9be949df",
+          "focus": "5",
+          "preRequisites": [
+            "50428ff1-e273-5c4d-d630-2db642f23d66",
+            "2bcdca23-3e88-1459-e79b-8977e29c02e8",
+            "701562fd-3626-b81b-1143-ac97ef0b3163",
+            "2f2cc627-eb94-8fa9-d9cb-4aecc83b9fa0",
+            "013d1b9f-12c2-5186-fa4d-f6e932f63e47"
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "d5b95c10-9c16-5194-0f7d-c769f53d8a9d",
+          "source": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "target": "701562fd-3626-b81b-1143-ac97ef0b3163",
+          "focus": "3",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "8d50cdbb-d40e-087b-43d3-1a5ac25c61ed",
+          "source": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "target": "2f2cc627-eb94-8fa9-d9cb-4aecc83b9fa0",
+          "focus": "3",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "d1d2143a-6b61-44ef-59d8-736b83168c77",
+          "source": "e10d7f06-b154-3e5d-b62c-fc763e324983",
+          "target": "013d1b9f-12c2-5186-fa4d-f6e932f63e47",
+          "focus": "3",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      }
+    ]
+  }
 }

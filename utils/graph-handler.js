@@ -1,19 +1,19 @@
 import uuid from 'react-uuid';
 
-const createFocusNode = (focus) => {
+const createFocusNode = (focus, position) => {
     return {
         data: {
             id: uuid(),
             title: "Foco: " + focus,
         },
         position: {
-            x: 100,
-            y: 100
+            x: position.x,
+            y: position.y
         },
     };
 }
 
-const createElementNode = (elementData, parentId) => {
+const createElementNode = (elementData, parentId, position) => {
     return {
         data: {
             id: uuid(),
@@ -24,8 +24,8 @@ const createElementNode = (elementData, parentId) => {
             focus: elementData.focus
         },
         position: {
-            x: 100,
-            y: 100
+            x: position.x,
+            y: position.y
         },
     };
 }
@@ -41,21 +41,23 @@ const updateElementNode = (elementNode, elementData) => {
 };
 
 const createTransitionEdge = (transitionData, destination) => {
+    const preRequisites = [...transitionData.preRequisites.map(preReq => preReq.parent)];
     return {
         data: {
             id: uuid(),
             source: transitionData.originElement.parent,
             target: destination.parent,
             focus: transitionData.focus,
-            preRequisites: [...transitionData.preRequisites.map(preReq => preReq.parent)]
+            preRequisites: preRequisites.length > 0 ? preRequisites : null
         }
     };
 }
 
 const updateTransitionEdge = (transitionElement, transitionData) => {
+    const preRequisites = [...transitionData.preRequisites.map(preReq => preReq.parent)];
     transitionElement.data().source = transitionData.originElement.parent;
     transitionElement.data().target = transitionData.destinationElements[0].parent;
-    transitionElement.data().preRequisites = [...transitionData.preRequisites.map(preReq => preReq.parent)];
+    transitionElement.data().preRequisites = preRequisites.length > 0 ? preRequisites : null;
     transitionElement.data().focus = transitionData.focus;
 };
 

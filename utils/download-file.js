@@ -7,4 +7,14 @@ const downloadFile = (document, fileData) => {
     dlAnchorElem.click();
 }
 
-export { downloadFile };
+const downloadImageFile = (document, fileData, fileName) => {
+    var dataStr = `data:img/png;base64,${fileData}`;
+    var dlAnchorElem = document.getElementById('downloadAnchorElem');
+    console.log(fileData)
+
+    dlAnchorElem.setAttribute("href", dataStr);
+    dlAnchorElem.setAttribute("download", `${fileName}.png`);
+    dlAnchorElem.click();
+}
+
+export { downloadFile, downloadImageFile };

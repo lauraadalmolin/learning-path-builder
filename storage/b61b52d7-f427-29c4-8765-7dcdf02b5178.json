@@ -9,8 +9,8 @@
           "title": "Foco: 3"
         },
         "position": {
-          "x": 194.91322012862838,
-          "y": 86.46952558394216
+          "x": 148.5989086777926,
+          "y": 72.51943177344944
         },
         "group": "nodes",
         "removed": false,
@@ -31,8 +31,8 @@
           "focus": "3"
         },
         "position": {
-          "x": 194.91322012862838,
-          "y": 86.46952558394216
+          "x": 148.5989086777926,
+          "y": 72.51943177344944
         },
         "group": "nodes",
         "removed": false,
@@ -49,8 +49,8 @@
           "title": "Foco: 3"
         },
         "position": {
-          "x": 244.6563187104893,
-          "y": 284.6150898665359
+          "x": 148.12166954187975,
+          "y": 224.35068460520736
         },
         "group": "nodes",
         "removed": false,
@@ -71,8 +71,8 @@
           "focus": "3"
         },
         "position": {
-          "x": 244.6563187104893,
-          "y": 284.6150898665359
+          "x": 148.12166954187975,
+          "y": 224.35068460520736
         },
         "group": "nodes",
         "removed": false,
@@ -89,8 +89,8 @@
           "title": "Foco: 2354"
         },
         "position": {
-          "x": 373.6650975925586,
-          "y": 141.84999627787968
+          "x": 432.2554915966282,
+          "y": 93.86167356978478
         },
         "group": "nodes",
         "removed": false,
@@ -111,8 +111,8 @@
           "focus": "2354"
         },
         "position": {
-          "x": 373.6650975925586,
-          "y": 141.84999627787968
+          "x": 432.2554915966282,
+          "y": 93.86167356978478
         },
         "group": "nodes",
         "removed": false,
@@ -129,8 +129,8 @@
           "title": "Foco: 23"
         },
         "position": {
-          "x": 379.76955003769666,
-          "y": -2.940037598520366
+          "x": 282.11889336424764,
+          "y": -29.724217714666366
         },
         "group": "nodes",
         "removed": false,
@@ -151,8 +151,48 @@
           "focus": "23"
         },
         "position": {
-          "x": 379.76955003769666,
-          "y": -2.940037598520365
+          "x": 282.11889336424764,
+          "y": -29.72421771466637
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "25e207eb-5759-f5fa-e702-3894db724426",
+          "title": "Foco: 29"
+        },
+        "position": {
+          "x": 300.3233471186755,
+          "y": 226.10884804685418
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "823cd960-ef9b-89ab-ee5b-ca48aea42279",
+          "title": "Química",
+          "description": "Uma descrição",
+          "link": "",
+          "parent": "25e207eb-5759-f5fa-e702-3894db724426",
+          "focus": "29"
+        },
+        "position": {
+          "x": 300.3233471186755,
+          "y": 226.10884804685418
         },
         "group": "nodes",
         "removed": false,
@@ -171,7 +211,7 @@
           "source": "50a275d0-d681-f7d5-117c-a645d5286eb2",
           "target": "597e288c-60ed-f667-cef1-67bbf8011f75",
           "focus": "3",
-          "preRequisites": []
+          "preRequisites": null
         },
         "position": {
           "x": 0,

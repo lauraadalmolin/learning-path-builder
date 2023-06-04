@@ -4,7 +4,8 @@ export const COLORS = {
   Secondary: '#037381',
   PrimaryHighlight: 'rgb(164, 75, 236)',
   SecondaryHighlight: 'rgb(104, 40, 156)',
-  Edge: 'gray'
+  Edge: '#d8d8d8',
+  PreRequisiteEdge: '#5B5B5B'
 }
 
 export const STYLE = [
@@ -25,6 +26,7 @@ export const STYLE = [
     css: {
       'text-valign': 'bottom',
       'background-color': COLORS.Primary,
+      'border-color': COLORS.Primary,
       'shape': 'round-rectangle',
       'font-size': '12px',
       'color': 'white',
@@ -50,6 +52,13 @@ export const STYLE = [
       'line-cap': 'round',
       'line-color': COLORS.Edge,
       'target-arrow-color': COLORS.Edge
+    }
+  },
+  {
+    selector: 'edge[?preRequisites]',
+    css: {
+      'line-color': COLORS.PreRequisiteEdge,
+      'target-arrow-color': COLORS.PreRequisiteEdge
     }
   }
 ];

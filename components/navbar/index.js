@@ -9,7 +9,7 @@ import useOutsideClick from '../../hooks/use-outside-click';
 import strings from '../../constants/strings.json';
 import styles from './style.module.css';
 
-const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, saveNameHandler, downloadPathHandler }) => {
+const Navbar = ({ learningPathData = null, showOptions = false, savePathHandler, saveNameHandler, downloadPathHandler, downloadImageHandler }) => {
   const [inputVisible, setInputVisible] = useState(false);
   const [headerText, setHeaderText] = useState('');
 
@@ -79,8 +79,13 @@ const Navbar = ({ learningPathData=null, showOptions=false, savePathHandler, sav
             </Button>
           </li> */}
           <li>
+            <Button onClickHandler={downloadImageHandler} type='primary' icon='MdDownload'>
+              Exportar imagem
+            </Button>
+          </li>
+          <li>
             <Button onClickHandler={downloadPathHandler} type='primary' icon='MdDownload'>
-              Baixar
+              Exportar JSON
             </Button>
           </li>
           <li>

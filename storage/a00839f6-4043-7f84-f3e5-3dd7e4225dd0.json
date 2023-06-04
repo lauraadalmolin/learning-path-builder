@@ -53,8 +53,8 @@
           "link": ""
         },
         "position": {
-          "x": 292.0763677787634,
-          "y": -98.74075128991953
+          "x": 207.90130253230376,
+          "y": -197.2871691394332
         },
         "group": "nodes",
         "removed": false,
@@ -71,12 +71,12 @@
           "title": "Foco: 4"
         },
         "position": {
-          "x": 292.0763677787634,
-          "y": -98.74075128991953
+          "x": 207.90130253230376,
+          "y": -197.2871691394332
         },
         "group": "nodes",
         "removed": false,
-        "selected": false,
+        "selected": true,
         "selectable": true,
         "locked": false,
         "grabbable": true,
@@ -251,7 +251,7 @@
           "source": "3de26007-48f0-7b43-e08d-3429bea66160",
           "target": "772b26cf-d51b-23a0-863f-c7bc74b1de39",
           "focus": "2",
-          "preRequisites": []
+          "preRequisites": null
         },
         "position": {
           "x": 0,
@@ -272,7 +272,7 @@
           "source": "3de26007-48f0-7b43-e08d-3429bea66160",
           "target": "ec99fdb3-6dca-2ded-8ee5-8787eb2c20f6",
           "focus": "3",
-          "preRequisites": []
+          "preRequisites": null
         },
         "position": {
           "x": 0,
@@ -293,7 +293,7 @@
           "source": "banana",
           "target": "2c55178c-f828-ddee-4670-21631a35c839",
           "focus": "5",
-          "preRequisites": []
+          "preRequisites": null
         },
         "position": {
           "x": 0,
