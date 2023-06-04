@@ -1,6 +1,6 @@
 {
   "id": "50583857-e357-10fb-afb0-064da4eec32f",
-  "name": "Front End",
+  "focus": "15",
   "graph": {
     "nodes": [
       {
@@ -1640,5 +1640,6 @@
         "classes": ""
       }
     ]
-  }
+  },
+  "name": "Desenvolvimento Front End 12"
 }

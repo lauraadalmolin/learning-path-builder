@@ -21,7 +21,7 @@ const TOAST_CONFIG = {
   autoClose: 6000
 }
 
-const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) => {
+const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData, lPathData }) => {
   const [inputs, setInputs] = useState(DEFAULT_STATE);
 
   useEffect(() => {
@@ -38,8 +38,37 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
     setInputs(newState);
   }, [formData]);
 
-  const isRequired = (inputValue) => {
-    return inputValue.length > 0;
+  const validateFocus = (focus) => {
+    if (parseInt(focus) > parseInt(lPathData.focus)) {
+      toast.error(`O valor do foco precisa ser menor ou igual ao foco total do estudante (foco = ${lPathData.focus})`, TOAST_CONFIG)
+      return false;
+    }
+
+    if (parseInt(focus) <= 0) {
+      toast.error(`O valor do foco precisa ser maior que zero`, TOAST_CONFIG)
+      return false;
+    }
+    
+    if (focus.length <= 0) {
+      toast.error(`O campo foco é obrigatório`, TOAST_CONFIG)
+      return false;
+    }
+
+    return true;
+  }
+
+  const isRequired = (inputValue, inputIdentifier) => {
+    const names = new Map([
+      ['title', 'nome do conteúdo'],
+      ['description', 'descrição']
+    ]);
+
+    if (inputValue.length <= 0) {
+      toast.error(`O campo ${names.get(inputIdentifier)} é obrigatório`, TOAST_CONFIG)
+      return false;
+    }
+
+    return true;
   };
 
   const isNotRequired = (_) => {
@@ -49,14 +78,14 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
   const validationFunctionsMap = new Map([
     ['title', isRequired],
     ['description', isRequired],
+    ['focus', validateFocus],
     ['link', isNotRequired],
-    ['focus', isRequired],
   ]);
 
   const inputChangedHandler = (inputIdentifier, event) => {
     const enteredValue = event.target.value;
     const validationFn = validationFunctionsMap.get(inputIdentifier);
-    const validationState = validationFn(enteredValue);
+    const validationState = validationFn(enteredValue, inputIdentifier);
     setInputs((curInputValues) => {
       return {
         ...curInputValues,
@@ -66,9 +95,9 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
   };
 
   const isFormValid = () => {
-    const titleValid = isRequired(inputs.title.value);
-    const descriptionValid = isRequired(inputs.description.value);
-    const focusValid = isRequired(inputs.focus.value);
+    const titleValid = isRequired(inputs.title.value, 'title');
+    const descriptionValid = isRequired(inputs.description.value, 'description');
+    const focusValid = validateFocus(inputs.focus.value);
 
     if (!titleValid || !focusValid || !descriptionValid) {
       setInputs((curInputs) => {
@@ -94,9 +123,8 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
     setInputs(DEFAULT_STATE);
   }
 
-  const submitForm = async () => {
+  const submitForm = async () => {    
     if (!isFormValid()) {
-      toast.error("Os campos marcados com * são obrigatórios", TOAST_CONFIG)
       return;
     }
 
@@ -119,18 +147,18 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData }) =>
   return (
     <div>
       <div className={styles.headerContainer}>
-        <SectionHeader>Criar Elemento</SectionHeader>
+        <SectionHeader>{inputs.id.value !== null ? 'Editar' : 'Criar'} Elemento</SectionHeader>
         { inputs.id.value !== null && <Button onClickHandler={() => deleteHandler(inputs.id.value)} type='delete' icon='MdDelete'>
           Excluir elemento
         </Button> }
       </div>
       <Input label='Nome do conteúdo' inputConfig={{
-        placeholder: 'Algoritmos e estruturas de dados',
+        placeholder: 'Ex: Algoritmos e estruturas de dados',
         value: inputs.title.value,
         onChange: inputChangedHandler.bind(this, 'title'),
       }}></Input>
       <Input label='Descrição' inputConfig={{
-        placeholder: 'Disciplina do primeiro ano de ECOMP',
+        placeholder: 'Ex: Disciplina do primeiro ano de ECOMP',
         value: inputs.description.value,
         onChange: inputChangedHandler.bind(this, 'description'),
       }}></Input>

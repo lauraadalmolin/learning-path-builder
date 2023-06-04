@@ -24,7 +24,7 @@ const TOAST_CONFIG = { position: toast.POSITION.BOTTOM_LEFT };
 
 const Builder = () => {
   const [cy, setCy] = useState();
-  const [formType, setFormType] = useState(FORM_TYPE.Element);
+  const [formType, setFormType] = useState(FORM_TYPE.Settings);
   const [loading, setLoading] = useState(true);
   const [lPathData, setLPathData] = useState();
   const [selectedElement, setSelectedElement] = useState();
@@ -213,6 +213,9 @@ const Builder = () => {
       focusNode = elementNode.parent();
       updateFocusNode(focusNode, elementData);
 
+      updateElementColor(selectedElement, false);
+      setSelectedElement(null);
+      
       // possible performance bottleneck since for big graphs it would require re-rendering
       const graphState = cy.elements().remove();
       graphState.restore();
@@ -247,14 +250,22 @@ const Builder = () => {
       // which means only one id at a time
       const transitionEdge = cy.getElementById(transitionData.id);
       updateTransitionEdge(transitionEdge, transitionData);
+
+      updateElementColor(selectedElement, false);
+      setSelectedElement(null);
       
       // possible performance bottleneck since for big graphs it would require re-rendering
       const graphState = cy.elements().remove();
       graphState.restore();
+
+      selectRecentlyCreatedObj(transitionData.id, FORM_TYPE.Transition);
     } else {
+      let transitionEdge;
       for (const destination of transitionData.destinationElements) {
-        const transitionEdge = createTransitionEdge(transitionData, destination);
+        transitionEdge = createTransitionEdge(transitionData, destination);
         cy.add(transitionEdge);
+      }
+      if (transitionData.destinationElements.length === 1) {
         selectRecentlyCreatedObj(transitionEdge.data.id, FORM_TYPE.Transition);
       }
     }
@@ -267,6 +278,17 @@ const Builder = () => {
     cy.remove(transition);
     setSelectedElement(null);
     await savePath();
+  }
+
+  const settingsSubmitHandlerFn = async (settingsData) => {
+    setLoading(true);
+    updateLPathData('name', settingsData.name);
+    updateLPathData('focus', settingsData.focus);
+    await savePath();
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 400);
   }
 
   const cancelHandlerFn = () => {
@@ -296,7 +318,8 @@ const Builder = () => {
         <SideSection 
           formType={formType} showForm={showFormHandler} selectedObj={selectedElement} lPathData={lPathData}
           elementSubmitHandler={elementSubmitHandlerFn} elementCancelHandler={cancelHandlerFn} elementDeleteHandler={elementDeleteHandlerFn}
-          transitionSubmitHandler={transitionSubmitHandlerFn} transitionCancelHandler={cancelHandlerFn} transitionDeleteHandler={transitionDeleteHandlerFn}/>
+          transitionSubmitHandler={transitionSubmitHandlerFn} transitionCancelHandler={cancelHandlerFn} transitionDeleteHandler={transitionDeleteHandlerFn}
+          settingsSubmitHandler={settingsSubmitHandlerFn}/>
       </div>
       <a id="downloadAnchorElem" className={styles.hiddenAnchor} />
     </div>;

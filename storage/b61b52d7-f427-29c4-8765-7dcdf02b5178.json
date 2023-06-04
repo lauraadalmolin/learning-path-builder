@@ -86,7 +86,7 @@
       {
         "data": {
           "id": "ece63809-2e6e-d149-938f-dcde2b0e13aa",
-          "title": "Foco: 2354"
+          "title": "Foco: 2"
         },
         "position": {
           "x": 432.2554915966282,
@@ -108,7 +108,7 @@
           "description": "disciplina louca",
           "link": "nem sei",
           "parent": "ece63809-2e6e-d149-938f-dcde2b0e13aa",
-          "focus": "2354"
+          "focus": "2"
         },
         "position": {
           "x": 432.2554915966282,
@@ -126,7 +126,7 @@
       {
         "data": {
           "id": "c102449f-7feb-c3d5-1ff2-87e2977d16c7",
-          "title": "Foco: 23"
+          "title": "Foco: 20"
         },
         "position": {
           "x": 282.11889336424764,
@@ -148,7 +148,7 @@
           "description": "vamo la",
           "link": "",
           "parent": "c102449f-7feb-c3d5-1ff2-87e2977d16c7",
-          "focus": "23"
+          "focus": "20"
         },
         "position": {
           "x": 282.11889336424764,
@@ -166,7 +166,7 @@
       {
         "data": {
           "id": "25e207eb-5759-f5fa-e702-3894db724426",
-          "title": "Foco: 29"
+          "title": "Foco: 9"
         },
         "position": {
           "x": 300.3233471186755,
@@ -188,7 +188,7 @@
           "description": "Uma descrição",
           "link": "",
           "parent": "25e207eb-5759-f5fa-e702-3894db724426",
-          "focus": "29"
+          "focus": "9"
         },
         "position": {
           "x": 300.3233471186755,
@@ -202,9 +202,72 @@
         "grabbable": true,
         "pannable": false,
         "classes": ""
+      },
+      {
+        "data": {
+          "id": "8f7fcc09-1957-bb04-6983-932ef0dcd62a",
+          "title": "Foco: 10"
+        },
+        "position": {
+          "x": 607.6486968411863,
+          "y": -52.83675996249373
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "b80ae252-5aac-b0d5-bc0b-018f54bbf96a",
+          "title": "Matemática Discreta",
+          "description": "Cadeira topzera",
+          "link": "",
+          "parent": "8f7fcc09-1957-bb04-6983-932ef0dcd62a",
+          "focus": "10"
+        },
+        "position": {
+          "x": 607.6486968411863,
+          "y": -52.83675996249373
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
       }
     ],
     "edges": [
+      {
+        "data": {
+          "id": "c34e59c5-f1f9-bca3-1c84-449a67ef5359",
+          "source": "c102449f-7feb-c3d5-1ff2-87e2977d16c7",
+          "target": "ece63809-2e6e-d149-938f-dcde2b0e13aa",
+          "focus": "18",
+          "preRequisites": [
+            "597e288c-60ed-f667-cef1-67bbf8011f75"
+          ]
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": true,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
       {
         "data": {
           "id": "58a67ef5-b613-aea1-1c59-31a040f5870e",
@@ -225,30 +288,8 @@
         "grabbable": true,
         "pannable": true,
         "classes": ""
-      },
-      {
-        "data": {
-          "id": "c34e59c5-f1f9-bca3-1c84-449a67ef5359",
-          "source": "c102449f-7feb-c3d5-1ff2-87e2977d16c7",
-          "target": "ece63809-2e6e-d149-938f-dcde2b0e13aa",
-          "focus": "23",
-          "preRequisites": [
-            "597e288c-60ed-f667-cef1-67bbf8011f75"
-          ]
-        },
-        "position": {
-          "x": 0,
-          "y": 0
-        },
-        "group": "edges",
-        "removed": false,
-        "selected": false,
-        "selectable": true,
-        "locked": false,
-        "grabbable": true,
-        "pannable": true,
-        "classes": ""
       }
     ]
-  }
+  },
+  "focus": "20"
 }

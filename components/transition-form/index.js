@@ -65,7 +65,7 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
 
   const inputChangedHandler = (inputIdentifier, event) => {
     const enteredValue = event.target.value;
-    const validationState = isRequired(enteredValue);
+    const validationState = validateFocus(enteredValue);
     setInputs((curInputValues) => {
       return {
         ...curInputValues,
@@ -119,9 +119,24 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
     return foundElement.length === 0;
   }
 
-  const isRequired = (inputValue) => {
-    return inputValue.length > 0;
-  };
+  const validateFocus = (focus) => {
+    if (parseInt(focus) > parseInt(lPathData.focus)) {
+      toast.error(`O valor do foco precisa ser menor ou igual ao foco total do estudante (foco = ${lPathData.focus})`, TOAST_CONFIG)
+      return false;
+    }
+
+    if (parseInt(focus) <= 0) {
+      toast.error(`O valor do foco precisa ser maior que zero`, TOAST_CONFIG)
+      return false;
+    }
+
+    if (focus.length <= 0) {
+      toast.error(`O campo foco é obrigatório`, TOAST_CONFIG)
+      return false;
+    }
+
+    return true;
+  }
 
   const isFormValid = () => {
     const originElement = inputs.originElement.selectedValues;
@@ -146,9 +161,8 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
       return false;
     }
     
-    const focusValid = isRequired(inputs.focus.value);
+    const focusValid = validateFocus(inputs.focus.value);
     if (!focusValid) {
-      toast.error(strings.focusValidationMessage, TOAST_CONFIG);
       return false;
     }
     
@@ -189,7 +203,7 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
   return (
     <div>
       <div className={styles.headerContainer}>
-        <SectionHeader>Criar Transição</SectionHeader>
+        <SectionHeader>{inputs.id.value !== null ? "Editar" : "Criar"} Transição</SectionHeader>
         {inputs.id.value !== null && <Button onClickHandler={() => deleteHandler(inputs.id.value)} type='delete' icon='MdDelete'>Excluir Transição</Button> } 
       </div>
       <Dropdown singleSelect={true} state={inputs.originElement} label='Selecione o elemento de origem' placeholder='Buscar...'></Dropdown>

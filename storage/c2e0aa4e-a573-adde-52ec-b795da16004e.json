@@ -1,0 +1,172 @@
+{
+  "id": "c2e0aa4e-a573-adde-52ec-b795da16004e",
+  "name": "Matemática - 3o Ano do Ensino Médio",
+  "graph": {
+    "nodes": [
+      {
+        "data": {
+          "id": "ce14b5d8-acb5-626d-8260-8cb3aec73555",
+          "title": "Foco: 10"
+        },
+        "position": {
+          "x": 302,
+          "y": 300.046875
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "b8d27de3-494d-39f1-66b6-afe55ff1fe3f",
+          "title": "Progressão geométrica",
+          "description": "Uma coisa ai",
+          "link": "",
+          "parent": "ce14b5d8-acb5-626d-8260-8cb3aec73555",
+          "focus": "10"
+        },
+        "position": {
+          "x": 302,
+          "y": 300.046875
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "e251a598-f455-e215-882c-9cb8da08efa4",
+          "title": "Foco: 10"
+        },
+        "position": {
+          "x": 594,
+          "y": 298.046875
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "9788acfd-62e7-3b6c-e96f-e12aabadc673",
+          "title": "Progressão aritmética",
+          "description": "-",
+          "link": "",
+          "parent": "e251a598-f455-e215-882c-9cb8da08efa4",
+          "focus": "10"
+        },
+        "position": {
+          "x": 594,
+          "y": 298.046875
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "b0c13e51-224d-5527-a61d-dc24f1631027",
+          "title": "Foco: 10"
+        },
+        "position": {
+          "x": 443,
+          "y": 97.046875
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "69091f6d-ffbd-ee9a-049f-aab53a5a9a73",
+          "title": "Progressões",
+          "description": "aaaa",
+          "link": "",
+          "parent": "b0c13e51-224d-5527-a61d-dc24f1631027",
+          "focus": "10"
+        },
+        "position": {
+          "x": 443,
+          "y": 97.046875
+        },
+        "group": "nodes",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": false,
+        "classes": ""
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "29dfc702-86e3-f346-f40e-d6bcc8ccbdb7",
+          "source": "b0c13e51-224d-5527-a61d-dc24f1631027",
+          "target": "ce14b5d8-acb5-626d-8260-8cb3aec73555",
+          "focus": "10",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      },
+      {
+        "data": {
+          "id": "0d3dd533-12a1-edaf-81fc-bc28922f2688",
+          "source": "b0c13e51-224d-5527-a61d-dc24f1631027",
+          "target": "e251a598-f455-e215-882c-9cb8da08efa4",
+          "focus": "10",
+          "preRequisites": null
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "group": "edges",
+        "removed": false,
+        "selected": false,
+        "selectable": true,
+        "locked": false,
+        "grabbable": true,
+        "pannable": true,
+        "classes": ""
+      }
+    ]
+  }
+}
