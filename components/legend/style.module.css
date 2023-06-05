@@ -1,0 +1,32 @@
+.legend {
+    z-index: 3;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: white;
+    padding: 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+.legendLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 6px;
+    padding-bottom: 2px;
+}
+
+.legendTitle {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-bottom: 6px;
+}
+
+.legendColor {
+    min-width: 0.8rem;
+    min-height: 0.8rem;
+    background-color: blue;
+    border-radius: 2px;
+}

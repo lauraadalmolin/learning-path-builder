@@ -19,6 +19,7 @@ import FORM_TYPE from '../../constants/form-type.json';
 import strings from '../../constants/strings.json';
 import styles from './style.module.css';
 import LoadingSpinner from '../../components/loading-spinner';
+import Legend from '../../components/legend';
 
 const TOAST_CONFIG = { position: toast.POSITION.BOTTOM_LEFT };
 
@@ -315,6 +316,7 @@ const Builder = () => {
       <Navbar learningPathData={lPathData} showOptions={true} saveNameHandler={saveName} savePathHandler={savePath} downloadPathHandler={downloadLPath} downloadImageHandler={downloadImage}/>
       <div className={styles.rowContainer}>
         <div ref={container} className={styles.container}></div>
+        <Legend></Legend>
         <SideSection 
           formType={formType} showForm={showFormHandler} selectedObj={selectedElement} lPathData={lPathData}
           elementSubmitHandler={elementSubmitHandlerFn} elementCancelHandler={cancelHandlerFn} elementDeleteHandler={elementDeleteHandlerFn}
