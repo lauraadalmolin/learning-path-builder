@@ -21,6 +21,7 @@ const TableRow = ({
     <div kry={lPath.id} className={styles.tableRow} onClick={navigateHandler}>
       <div className={styles.infoContainer}>
         <span className={styles.pathName}>{lPath.name}</span>
+        <Badge>{lPath.focus}</Badge>
         <Badge>{numberOfElements}</Badge>
         <Badge>{numberOfTransitions}</Badge>
       </div>

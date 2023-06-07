@@ -8,6 +8,10 @@ const getTotalAmountOfTransitions = (lPathData) => {
   return `${lPathData.graph?.edges?.length ?? 0} transições`;
 }
 
+const getFocusString = (lPathData) => {
+  return `Foco simultâneo máximo: ${lPathData.focus ?? "não definido"}`;
+}
+
 export default function handler(req, res) {
   const fileNames = getAllFileNames();
   const summaries = [];
@@ -20,6 +24,7 @@ export default function handler(req, res) {
       const summary = { 
         name: lPathData.name,
         id: lPathData.id,
+        focus: getFocusString(lPathData),
         numberOfElements: getTotalAmountOfElements(lPathData),
         numberOfTransitions: getTotalAmountOfTransitions(lPathData)
       };
