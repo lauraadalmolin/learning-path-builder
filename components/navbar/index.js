@@ -62,7 +62,7 @@ const Navbar = ({ learningPathData = null, showOptions = false, savePathHandler,
             <MdDashboard className={styles.icon} />
           </li>
           <li ref={ref} onClick={handleClick} className={`${styles.li} ${styles.headerText} no-select`}>
-            {!inputVisible && <span>{headerText == "" ? "Kerberos" : headerText}</span>}
+            {!inputVisible && <span>{headerText == "" ? "Milo: Modelador de Rotas de Aprendizagem" : headerText}</span>}
             { inputVisible && 
               <input 
                 value={headerText}

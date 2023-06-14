@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang='en'>
       <Head>
-        <title>Kerberos</title>
+        <title>Milo</title>
       </Head>
       <body>
         <Main />
