@@ -8,11 +8,11 @@ const Legend = () => {
         </div>
         <div className={styles.legendLine}>
             <div className={styles.legendColor} style={{backgroundColor: COLORS.Primary}}></div>
-            <div className={styles.legendText}>Elemento</div>
+            <div className={styles.legendText}>Conteúdo</div>
         </div>
         <div className={styles.legendLine}>
             <div className={styles.legendColor} style={{backgroundColor: COLORS.PrimaryHighlight}}></div>
-            <div className={styles.legendText}>Elemento ou transição selecionado</div>
+            <div className={styles.legendText}>Conteúdo ou transição selecionado</div>
         </div>
         <div className={styles.legendLine}>
             <div className={styles.legendColor} style={{backgroundColor: COLORS.Edge}}></div>

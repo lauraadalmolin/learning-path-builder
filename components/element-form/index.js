@@ -147,9 +147,9 @@ const ElementForm = ({ saveHandler, cancelHandler, deleteHandler, formData, lPat
   return (
     <div>
       <div className={styles.headerContainer}>
-        <SectionHeader>{inputs.id.value !== null ? 'Editar' : 'Criar'} Elemento</SectionHeader>
+        <SectionHeader>{inputs.id.value !== null ? 'Editar' : 'Criar'} Conteúdo</SectionHeader>
         { inputs.id.value !== null && <Button onClickHandler={() => deleteHandler(inputs.id.value)} type='delete' icon='MdDelete'>
-          Excluir elemento
+          Excluir Conteúdo
         </Button> }
       </div>
       <Input label='Nome do conteúdo' inputConfig={{

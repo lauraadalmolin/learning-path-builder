@@ -206,8 +206,8 @@ const TransitionForm = ({ saveHandler, cancelHandler, deleteHandler, formData, l
         <SectionHeader>{inputs.id.value !== null ? "Editar" : "Criar"} Transição</SectionHeader>
         {inputs.id.value !== null && <Button onClickHandler={() => deleteHandler(inputs.id.value)} type='delete' icon='MdDelete'>Excluir Transição</Button> } 
       </div>
-      <Dropdown singleSelect={true} state={inputs.originElement} label='Selecione o elemento de origem' placeholder='Buscar...'></Dropdown>
-      <Dropdown singleSelect={inputs.id.value !== null} state={inputs.destinationElements} label={inputs.id.value !== null ? 'Selecione o elemento de destino' : 'Selecione os elementos seguintes'} placeholder='Buscar...'></Dropdown>
+      <Dropdown singleSelect={true} state={inputs.originElement} label='Selecione o conteúdo de origem' placeholder='Buscar...'></Dropdown>
+      <Dropdown singleSelect={inputs.id.value !== null} state={inputs.destinationElements} label={inputs.id.value !== null ? 'Selecione o conteúdo de destino' : 'Selecione os conteúdos seguintes'} placeholder='Buscar...'></Dropdown>
       <Dropdown state={inputs.preRequisites} label='Pré-requisitos' placeholder='Buscar...'></Dropdown>
       <Input label='Foco' inputConfig={{
         placeholder: 'Insira a intensidade de foco necessária',
